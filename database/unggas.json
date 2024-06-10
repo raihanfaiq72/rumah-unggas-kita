@@ -1,0 +1,27 @@
+{
+  "posts": [
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    { "id": "1", "name": "John Doe", "email": "john@example.com" },
+    { "id": "2", "name": "Jane Smith", "email": "jane@example.com" }
+  ],
+  "barang":[
+    {"id":"1","nama":"barang init","harga":"10000","id_toko":"1","click":"0"}
+  ],
+  "toko":[
+    {"id":1,"nama":"LA ICE market","alamat":"jauh disana"}
+  ],
+  "transaksi":[
+    {"id":"1","id_barang":"1","id_toko":"1","id_users":"1","jml_beli":"100","status":"1","jml_bayar":"1000000"}
+  ]
+}
+
