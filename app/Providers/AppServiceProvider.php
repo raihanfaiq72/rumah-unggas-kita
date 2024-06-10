@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->share('buyer', 'Layout/header');
+        view()->share('auth', 'Layout/Auth/header');
     }
 }
