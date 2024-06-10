@@ -43,7 +43,7 @@
                     </a>
                     @guest
                     <a href="{{url('login')}}" class="my-auto">
-                        <i class="fas fa-user fa-2x"></i> 
+                        <i class="fas fa-user fa-2x"></i> {{session()->get('nama_lengkap')}}
                     </a> 
                     @else
                         @if(session()->get('role') == 1)

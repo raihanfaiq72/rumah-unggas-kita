@@ -15,6 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','Buyer\DashboardController@index');
 Route::get('login','Auth\AuthController@login');
-Route::post('loginProses','AuthController@loginProses');
+Route::post('loginProses','Auth\AuthController@loginProses');
 Route::get('register','Auth\AuthController@register');
 Route::post('registerProses','Auth\AuthController@registerProses');
+
+
+Route::middleware(['login'])->group(function () {
+
+
+    Route::middleware(['seller'])->group(function () {
+
+        Route::resource('seller/dashboard','Seller\DashboardController');
+    });
+
+    Route::middleware(['buyer'])->group(function () {
+
+        Route::resource('buyer/dashboard','Buyer\DashboardController');
+    });
+});

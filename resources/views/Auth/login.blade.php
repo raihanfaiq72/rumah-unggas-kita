@@ -31,7 +31,7 @@
         <div class="login_wrapper">
             <div class="animate form login_form">
                 <section class="login_content">
-                    <form action="{{url('logiProses')}}" method="POST">
+                    <form action="{{url('loginProses')}}" method="POST">
                         @csrf
                         <h1>Login Area</h1>
                         <div>

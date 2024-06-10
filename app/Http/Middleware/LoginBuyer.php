@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Auth;
 
-class LoginSeller
+class LoginBuyer
 {
     /**
      * Handle an incoming request.
