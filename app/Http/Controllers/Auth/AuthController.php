@@ -44,11 +44,11 @@ class AuthController extends Controller
             'username'      => $request->username,
             'nama_lengkap'  => $request->nama_lengkap,
             'password'      => Hash::make($request->password),
-            'katasandi'     => $request->katasandi,
+            'katasandi'     => $request->password,
             'role'          => 2
         ]);
 
-        return redirect('login')->with('sukses','anda berhasil login');
+        return redirect('login')->with('sukses','anda berhasil Register');
     }
 
     public function loginProses(Request $request)
