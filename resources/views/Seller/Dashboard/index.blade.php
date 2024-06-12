@@ -734,6 +734,7 @@
         </div>
     </div>
 </div>
+@include('Layout/Auth/footer')
 @endsection
 
 @section('js-library')

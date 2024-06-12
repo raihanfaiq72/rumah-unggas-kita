@@ -33,12 +33,25 @@
                 <section class="login_content">
                     <form action="{{url('loginProses')}}" method="POST">
                         @csrf
+                        @if (session()->has('sukses'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('sukses') }}
+                        </div>
+                        @elseif (session()->has('gagal'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('gagal') }}
+                        </div>
+                        @elseif (session()->has('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('success') }}
+                        </div>
+                        @endif
                         <h1>Login Area</h1>
                         <div>
-                            <input type="text" class="form-control" placeholder="Username" required="" />
+                            <input type="text" class="form-control" name="username" placeholder="Username" required="" />
                         </div>
                         <div>
-                            <input type="password" class="form-control" placeholder="Password" required="" />
+                            <input type="password" class="form-control" name="password" placeholder="Password" required="" />
                         </div>
                         <div>
                             <button type="submit">submit</button>

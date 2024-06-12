@@ -18,7 +18,7 @@ Route::get('login','Auth\AuthController@login');
 Route::post('loginProses','Auth\AuthController@loginProses');
 Route::get('register','Auth\AuthController@register');
 Route::post('registerProses','Auth\AuthController@registerProses');
-
+Route::get('logout','Auth\AuthController@logout');
 
 Route::middleware(['login'])->group(function () {
 
