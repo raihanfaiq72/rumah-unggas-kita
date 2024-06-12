@@ -15,7 +15,7 @@
         <div class="row g-5 align-items-center">
             <div class="col-md-12 col-lg-7">
                 <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
-                <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
+                <h1 class="mb-5 display-3 text-primary">Selamat Datang di Rumah Unggas Kita</h1>
                 <div class="position-relative mx-auto">
                     <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number"
                         placeholder="Search">
@@ -30,11 +30,11 @@
                         <div class="carousel-item active rounded">
                             <img src="img/hero-img-1.png" class="img-fluid w-100 h-100 bg-secondary rounded"
                                 alt="First slide">
-                            <a href="#" class="btn px-4 py-2 text-white rounded">Fruites</a>
+                            <a href="#" class="btn px-4 py-2 text-white rounded">Ayam</a>
                         </div>
                         <div class="carousel-item rounded">
                             <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                            <a href="#" class="btn px-4 py-2 text-white rounded">Vesitables</a>
+                            <a href="#" class="btn px-4 py-2 text-white rounded">Bebek</a>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
@@ -115,7 +115,7 @@
         <div class="tab-class text-center">
             <div class="row g-4">
                 <div class="col-lg-4 text-start">
-                    <h1>Our Organic Products</h1>
+                    <h1>Best Seller Products</h1>
                 </div>
                 <div class="col-lg-8 text-end">
                     <ul class="nav nav-pills d-inline-flex text-center mb-5">
@@ -126,22 +126,22 @@
                         </li>
                         <li class="nav-item">
                             <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                                <span class="text-dark" style="width: 130px;">Vegetables</span>
+                                <span class="text-dark" style="width: 130px;">Ayam</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
-                                <span class="text-dark" style="width: 130px;">Fruits</span>
+                                <span class="text-dark" style="width: 130px;">Bebek</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                                <span class="text-dark" style="width: 130px;">Bread</span>
+                                <span class="text-dark" style="width: 130px;">Dara</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                                <span class="text-dark" style="width: 130px;">Meat</span>
+                                <span class="text-dark" style="width: 130px;">Kalkun</span>
                             </a>
                         </li>
                     </ul>
@@ -158,11 +158,10 @@
                                             <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Ayam</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -176,14 +175,13 @@
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative fruite-item">
                                         <div class="fruite-img">
-                                            <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            <img src="img/Best-product-6.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Bebek</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -200,11 +198,10 @@
                                             <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Raspberries</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Paha Ayam</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -221,11 +218,11 @@
                                             <img src="img/fruite-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Apricots</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Burung Dara</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -242,11 +239,11 @@
                                             <img src="img/fruite-item-3.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Banana</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Burung Dara</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -263,11 +260,11 @@
                                             <img src="img/fruite-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Oranges</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Bebek</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -284,11 +281,11 @@
                                             <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Raspberries</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Paha Ayam</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -305,11 +302,11 @@
                                             <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Paha Ayam</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -334,11 +331,11 @@
                                             <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Paha Ayam</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -355,11 +352,11 @@
                                             <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Raspberries</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Paha Ayam</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -384,11 +381,11 @@
                                             <img src="img/fruite-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Oranges</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Bebek</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -405,11 +402,11 @@
                                             <img src="img/fruite-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Apple</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Bebek</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -431,14 +428,14 @@
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative fruite-item">
                                         <div class="fruite-img">
-                                            <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            <img src="img/best-product-3.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Burung Dara</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -455,11 +452,11 @@
                                             <img src="img/fruite-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Apricots</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
-                                                eiusmod te incididunt</p>
+                                            <h4>Burung Dara</h4>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                                yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -481,12 +478,12 @@
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative fruite-item">
                                         <div class="fruite-img">
-                                            <img src="img/fruite-item-3.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            <img src="img/kalkun.png" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Banana</h4>
+                                            <h4>Kalkun</h4>
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
                                                 eiusmod te incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
@@ -502,12 +499,12 @@
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative fruite-item">
                                         <div class="fruite-img">
-                                            <img src="img/fruite-item-2.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            <img src="img/kalkun-1.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Raspberries</h4>
+                                            <h4>Kalkun</h4>
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
                                                 eiusmod te incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
@@ -523,12 +520,12 @@
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative fruite-item">
                                         <div class="fruite-img">
-                                            <img src="img/fruite-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            <img src="img/kalkun-2.jpg" class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; left: 10px;">Fruits</div>
+                                            style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                            <h4>Oranges</h4>
+                                            <h4>Kalkun</h4>
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
                                                 eiusmod te incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
@@ -562,7 +559,7 @@
                         <img src="img/featur-1.jpg" class="img-fluid rounded-top w-100" alt="">
                         <div class="px-4 rounded-bottom">
                             <div class="service-content bg-primary text-center p-4 rounded">
-                                <h5 class="text-white">Fresh Apples</h5>
+                                <h5 class="text-white">Ayam Segar</h5>
                                 <h3 class="mb-0">20% OFF</h3>
                             </div>
                         </div>
@@ -572,10 +569,10 @@
             <div class="col-md-6 col-lg-4">
                 <a href="#">
                     <div class="service-item bg-dark rounded border border-dark">
-                        <img src="img/featur-2.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <img src="img/vegetable-item-1.jpg" class="img-fluid rounded-top w-100" alt="">
                         <div class="px-4 rounded-bottom">
                             <div class="service-content bg-light text-center p-4 rounded">
-                                <h5 class="text-primary">Tasty Fruits</h5>
+                                <h5 class="text-primary">Dada Ayam</h5>
                                 <h3 class="mb-0">Free delivery</h3>
                             </div>
                         </div>
@@ -585,10 +582,10 @@
             <div class="col-md-6 col-lg-4">
                 <a href="#">
                     <div class="service-item bg-primary rounded border border-primary">
-                        <img src="img/featur-3.jpg" class="img-fluid rounded-top w-100" alt="">
+                        <img src="img/kalkun-2.jpg" class="img-fluid rounded-top w-100" alt="">
                         <div class="px-4 rounded-bottom">
                             <div class="service-content bg-secondary text-center p-4 rounded">
-                                <h5 class="text-white">Exotic Vegitable</h5>
+                                <h5 class="text-white">Kalkun Segar</h5>
                                 <h3 class="mb-0">Discount 30$</h3>
                             </div>
                         </div>
@@ -604,16 +601,16 @@
 <!-- Vesitable Shop Start-->
 <div class="container-fluid vesitable py-5">
     <div class="container py-5">
-        <h1 class="mb-0">Fresh Organic Vegetables</h1>
+        <h1 class="mb-0">Unggas Segar</h1>
         <div class="owl-carousel vegetable-carousel justify-content-center">
             <div class="border border-primary rounded position-relative vesitable-item">
                 <div class="vesitable-img">
                     <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
                 </div>
                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
-                    Vegetable</div>
+                    Unggas</div>
                 <div class="p-4 rounded-bottom">
-                    <h4>Parsely</h4>
+                    <h4>Ayam Utuh</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                     <div class="d-flex justify-content-between flex-lg-wrap">
                         <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -624,12 +621,12 @@
             </div>
             <div class="border border-primary rounded position-relative vesitable-item">
                 <div class="vesitable-img">
-                    <img src="img/vegetable-item-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                    <img src="img/kalkun-2.jpg" class="img-fluid w-100 rounded-top" alt="">
                 </div>
                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
-                    Vegetable</div>
+                    Unggas</div>
                 <div class="p-4 rounded-bottom">
-                    <h4>Parsely</h4>
+                    <h4>Kalkun Utuh</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                     <div class="d-flex justify-content-between flex-lg-wrap">
                         <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -640,12 +637,12 @@
             </div>
             <div class="border border-primary rounded position-relative vesitable-item">
                 <div class="vesitable-img">
-                    <img src="img/vegetable-item-3.png" class="img-fluid w-100 rounded-top bg-light" alt="">
+                    <img src="img/vegetable-item-3.jpg" class="img-fluid w-100 rounded-top bg-light" alt="">
                 </div>
                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
-                    Vegetable</div>
+                    Unggas</div>
                 <div class="p-4 rounded-bottom">
-                    <h4>Banana</h4>
+                    <h4>Ceker Ayam</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                     <div class="d-flex justify-content-between flex-lg-wrap">
                         <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
@@ -659,9 +656,9 @@
                     <img src="img/vegetable-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
                 </div>
                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
-                    Vegetable</div>
+                    Unggas</div>
                 <div class="p-4 rounded-bottom">
-                    <h4>Bell Papper</h4>
+                    <h4>Sayap Ayam</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                     <div class="d-flex justify-content-between flex-lg-wrap">
                         <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
@@ -675,9 +672,9 @@
                     <img src="img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
                 </div>
                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
-                    Vegetable</div>
+                    Unggas</div>
                 <div class="p-4 rounded-bottom">
-                    <h4>Potatoes</h4>
+                    <h4>Paha Ayam</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                     <div class="d-flex justify-content-between flex-lg-wrap">
                         <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
@@ -691,9 +688,9 @@
                     <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
                 </div>
                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
-                    Vegetable</div>
+                    Unggas</div>
                 <div class="p-4 rounded-bottom">
-                    <h4>Parsely</h4>
+                    <h4>Ayam Utuh</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                     <div class="d-flex justify-content-between flex-lg-wrap">
                         <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
@@ -707,9 +704,9 @@
                     <img src="img/vegetable-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
                 </div>
                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
-                    Vegetable</div>
+                    Unggas</div>
                 <div class="p-4 rounded-bottom">
-                    <h4>Potatoes</h4>
+                    <h4>Paha Ayam</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                     <div class="d-flex justify-content-between flex-lg-wrap">
                         <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
@@ -723,9 +720,9 @@
                     <img src="img/vegetable-item-6.jpg" class="img-fluid w-100 rounded-top" alt="">
                 </div>
                 <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
-                    Vegetable</div>
+                    Unggas</div>
                 <div class="p-4 rounded-bottom">
-                    <h4>Parsely</h4>
+                    <h4>Ayam Utuh</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                     <div class="d-flex justify-content-between flex-lg-wrap">
                         <p class="text-dark fs-5 fw-bold mb-0">$7.99 / kg</p>
@@ -746,7 +743,7 @@
         <div class="row g-4 align-items-center">
             <div class="col-lg-6">
                 <div class="py-4">
-                    <h1 class="display-3 text-white">Fresh Exotic Fruits</h1>
+                    <h1 class="display-3 text-white">Unggas Segar</h1>
                     <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
                     <p class="mb-4 text-dark">The generated Lorem Ipsum is therefore always free from repetition
                         injected humour, or non-characteristic words etc.</p>
@@ -788,7 +785,7 @@
                             <img src="img/best-product-1.jpg" class="img-fluid rounded-circle w-100" alt="">
                         </div>
                         <div class="col-6">
-                            <a href="#" class="h5">Organic Tomato</a>
+                            <a href="#" class="h5">Bebek Utuh</a>
                             <div class="d-flex my-3">
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
@@ -810,7 +807,7 @@
                             <img src="img/best-product-2.jpg" class="img-fluid rounded-circle w-100" alt="">
                         </div>
                         <div class="col-6">
-                            <a href="#" class="h5">Organic Tomato</a>
+                            <a href="#" class="h5">Paha Ayam</a>
                             <div class="d-flex my-3">
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
@@ -832,7 +829,7 @@
                             <img src="img/best-product-3.jpg" class="img-fluid rounded-circle w-100" alt="">
                         </div>
                         <div class="col-6">
-                            <a href="#" class="h5">Organic Tomato</a>
+                            <a href="#" class="h5">Burung Dara Utuh</a>
                             <div class="d-flex my-3">
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
@@ -854,7 +851,7 @@
                             <img src="img/best-product-4.jpg" class="img-fluid rounded-circle w-100" alt="">
                         </div>
                         <div class="col-6">
-                            <a href="#" class="h5">Organic Tomato</a>
+                            <a href="#" class="h5">Burung Dara Utuh</a>
                             <div class="d-flex my-3">
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
@@ -876,7 +873,7 @@
                             <img src="img/best-product-5.jpg" class="img-fluid rounded-circle w-100" alt="">
                         </div>
                         <div class="col-6">
-                            <a href="#" class="h5">Organic Tomato</a>
+                            <a href="#" class="h5">Paha ayam</a>
                             <div class="d-flex my-3">
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
@@ -898,7 +895,7 @@
                             <img src="img/best-product-6.jpg" class="img-fluid rounded-circle w-100" alt="">
                         </div>
                         <div class="col-6">
-                            <a href="#" class="h5">Organic Tomato</a>
+                            <a href="#" class="h5">Bebek Utuh</a>
                             <div class="d-flex my-3">
                                 <i class="fas fa-star text-primary"></i>
                                 <i class="fas fa-star text-primary"></i>
@@ -917,7 +914,7 @@
                 <div class="text-center">
                     <img src="img/fruite-item-1.jpg" class="img-fluid rounded" alt="">
                     <div class="py-4">
-                        <a href="#" class="h5">Organic Tomato</a>
+                        <a href="#" class="h5">Bebek</a>
                         <div class="d-flex my-3 justify-content-center">
                             <i class="fas fa-star text-primary"></i>
                             <i class="fas fa-star text-primary"></i>
@@ -933,9 +930,9 @@
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="text-center">
-                    <img src="img/fruite-item-2.jpg" class="img-fluid rounded" alt="">
+                    <img src="img/featur-1.jpg" class="img-fluid rounded" alt="">
                     <div class="py-4">
-                        <a href="#" class="h5">Organic Tomato</a>
+                        <a href="#" class="h5">Ayam</a>
                         <div class="d-flex my-3 justify-content-center">
                             <i class="fas fa-star text-primary"></i>
                             <i class="fas fa-star text-primary"></i>
@@ -953,7 +950,7 @@
                 <div class="text-center">
                     <img src="img/fruite-item-3.jpg" class="img-fluid rounded" alt="">
                     <div class="py-4">
-                        <a href="#" class="h5">Organic Tomato</a>
+                        <a href="#" class="h5">Burung Dara</a>
                         <div class="d-flex my-3 justify-content-center">
                             <i class="fas fa-star text-primary"></i>
                             <i class="fas fa-star text-primary"></i>
@@ -969,9 +966,9 @@
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
                 <div class="text-center">
-                    <img src="img/fruite-item-4.jpg" class="img-fluid rounded" alt="">
+                    <img src="img/kalkun-2.jpg" class="img-fluid rounded" alt="">
                     <div class="py-2">
-                        <a href="#" class="h5">Organic Tomato</a>
+                        <a href="#" class="h5">Kalkun</a>
                         <div class="d-flex my-3 justify-content-center">
                             <i class="fas fa-star text-primary"></i>
                             <i class="fas fa-star text-primary"></i>
@@ -1044,8 +1041,8 @@
                     <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
                         style="bottom: 30px; right: 0;"></i>
                     <div class="mb-4 pb-4 border-bottom border-secondary">
-                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                            industry's standard dummy text ever since the 1500s,
+                        <p class="mb-0">Lumero uno ini sangat worth it dagingnya sangat yummy
+                            RAWRRRRR
                         </p>
                     </div>
                     <div class="d-flex align-items-center flex-nowrap">
