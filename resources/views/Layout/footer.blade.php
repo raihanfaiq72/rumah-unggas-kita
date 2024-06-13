@@ -91,8 +91,8 @@
                     <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                     <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                     <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">Satria</a> Team 3 <a
-                        class="border-bottom" href="wa.me/6281225662637">Team03</a>
+                    Designed By <a class="border-bottom" href="">Mas Faiq</a> Team 3 <a
+                        class="border-bottom" href="">Team03</a>
                 </div>
             </div>
         </div>
