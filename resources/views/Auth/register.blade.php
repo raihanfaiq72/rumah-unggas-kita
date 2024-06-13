@@ -33,6 +33,19 @@
                 <section class="login_content">
                     <form action="{{url('registerProses')}}" method="POST">
                         @csrf
+                        @if (session()->has('sukses'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('sukses') }}
+                        </div>
+                        @elseif (session()->has('gagal'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('gagal') }}
+                        </div>
+                        @elseif (session()->has('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('success') }}
+                        </div>
+                        @endif
                         <h1>Create Account</h1>
                         <div>
                             <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_lengkap"
@@ -46,7 +59,7 @@
                             <input type="email" class="form-control" placeholder="Email" name="email" required="" />
                         </div>
                         <div>
-                            <input type="password" class="form-control" placeholder="Password" name="email"
+                            <input type="password" class="form-control" placeholder="Password" name="password"
                                 required="" />
                         </div>
                         <div>

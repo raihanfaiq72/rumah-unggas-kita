@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use App\Models\UserModel;
 
 use DB;
 use Illuminate\Support\Facades\Hash;
@@ -31,67 +32,73 @@ class AuthController extends Controller
 
     public function registerProses(Request $request)
     {
+        $kredensial         = $request->validate([
+            'username'       => 'required',
+            'nama_lengkap'  => 'required',
+            'password'      => 'required'
+        ]);
 
-        $respon = Http::post('http://localhost:3000/users',[
-            'nama_lengkap'  => $request->nama_lengkap,
+        // dd($kredensial);
+
+        UserModel::create([
             'username'      => $request->username,
-            'katasandi'     => $request->password,
+            'nama_lengkap'  => $request->nama_lengkap,
             'password'      => Hash::make($request->password),
-            'email'         => $request->email ,
+            'katasandi'     => $request->password,
             'role'          => 2
         ]);
 
-        if($respon->successful()){
-            return redirect('login')->with('sukses','Anda berhasil mendaftar');
-        }else{
-            return back()->withErrors('gagal','anda gagal mendaftar');
-        }
+        return redirect('login')->with('sukses','anda berhasil Register');
     }
 
     public function loginProses(Request $request)
-{
-    $response = Http::get('http://localhost:3000/users');
+    {
+        $kredensial     = $request->validate([
+            'username'  => 'required',
+            'password'  => 'required'
+        ]);
 
-    $userData = $response->json();
+        $userLogin = UserModel::where('username',$request->username)->first();
 
-    // Pengecekan apakah data pengguna ditemukan
-    if (empty($userData['users'])) {
-        return redirect()->back()->with('gagal', 'Pengguna tidak ditemukan');
-    }
+        if($userLogin == NULL){
+            return redirect()->back()->with('gagal','user tidak ditemukan');
+        }
 
-    // Pengecekan apakah username dan password cocok
-    $matchedUser = null;
-    foreach ($userData['users'] as $user) {
-        if ($user['username'] === $request->username && Hash::check($request->password, $user['password'])) {
-            $matchedUser = $user;
-            break;
+        if(Hash::check($request->password,$userLogin->password)==FALSE){
+            return redirect()->back()->with('gagal','password anda salah');
+        }
+
+
+        if($userLogin->role == 1){
+            $session = [
+                'id'            => $userLogin->id,
+                'nama_lengkap'  => $userLogin->nama_lengkap,
+                'username'      => $userLogin->username,
+                'role'          => $userLogin->role,
+                'isLogin'       => TRUE
+            ];
+
+            session($session);
+
+            return redirect('seller/dashboard')->with('sukses','Selamat Datang Kembali');
+        }elseif($userLogin->role == 2){
+            $session = [
+                'id'            => $userLogin->id,
+                'nama_lengkap'  => $userLogin->nama_lengkap,
+                'username'      => $userLogin->username,
+                'role'          => $userLogin->role,
+                'isLogin'       => TRUE
+            ];
+
+            session($session);
+            return redirect('buyer/dashboard')->with('sukses','Selamat Datang Kembali');
+
         }
     }
 
-    if (!$matchedUser) {
-        return redirect()->back()->with('gagal', 'Username atau password salah');
+    public function logout()
+    {
+        session()->flush();
+        return redirect('login');
     }
-
-    $role = $matchedUser['role'];
-
-    $dashboard = '';
-    if ($role == 1) {
-        $dashboard = 'seller/dashboard';
-    } elseif ($role == 2) {
-        $dashboard = 'buyer/dashboard';
-    } else {
-        // Logika lain untuk peran lainnya jika diperlukan
-    }
-
-    $session = [
-        'id'            => $matchedUser['id'],
-        'nama_lengkap'  => $matchedUser['nama_lengkap'],
-        'role'          => $role,
-        'isLogin'       => true
-    ];
-
-    session($session);
-    return redirect($dashboard)->with('sukses', 'Selamat datang kembali');
-}
-
 }
