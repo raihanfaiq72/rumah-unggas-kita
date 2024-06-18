@@ -8,7 +8,8 @@
 
 @endsection
 
-@section('sudahlogin')<div class="right_col" role="main">
+@section('sudahlogin')
+<div class="right_col" role="main">
     <div class="">
         <div class="page-title">
             <div class="title_left">
@@ -52,8 +53,8 @@
                     </div>
                     <div class="x_content">
                         <br />
-                        <form action="{{url('user/profile')}}/update" method="POST" id="demo-form2" data-parsley-validate
-                            class="form-horizontal form-label-left">
+                        <form action="{{url('user/profile')}}/update" method="POST" id="demo-form2"
+                            data-parsley-validate class="form-horizontal form-label-left">
                             @csrf
                             @method('PUT')
                             <input type="hidden" name="id" value="{{ $profile->id }}">
@@ -76,7 +77,8 @@
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Password</label>
+                                <label for="middle-name"
+                                    class="col-form-label col-md-3 col-sm-3 label-align">Password</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input id="middle-name" class="form-control" type="text"
                                         value="{{ $profile->katasandi}}" name="password">

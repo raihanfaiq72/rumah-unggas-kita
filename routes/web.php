@@ -27,6 +27,7 @@ Route::middleware(['login'])->group(function () {
         Route::resource('user/dashboard','Seller\DashboardController');
         Route::resource('user/toko','Seller\TokoController');
         Route::resource('user/profile','Seller\UsersController');
+        Route::resource('user/item-toko','Seller\ItemTokoController');
     });
 
 });
