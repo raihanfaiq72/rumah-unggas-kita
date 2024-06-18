@@ -26,6 +26,7 @@ Route::middleware(['login'])->group(function () {
     Route::middleware(['seller'])->group(function () {
 
         Route::resource('seller/dashboard','Seller\DashboardController');
+        Route::resource('seller/toko','Seller\TokoController');
     });
 
     Route::middleware(['buyer'])->group(function () {
