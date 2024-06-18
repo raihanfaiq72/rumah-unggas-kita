@@ -52,167 +52,47 @@
                     </div>
                     <div class="x_content">
                         <br />
-                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-
+                        @if($toko)
+                        <p>Selamat datang di toko anda , silahkan manage toko anda</p>
+                        <form action="{{url('seller/toko')}}/update" method="POST" id="demo-form2" data-parsley-validate
+                            class="form-horizontal form-label-left">
+                            @csrf
+                            @method('PUT')
                             <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">First Name
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama Toko
                                     <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input type="text" id="first-name" required="required" class="form-control ">
+                                    <input type="text" id="first-name" required="required" class="form-control "
+                                        name="nama_toko" value="{{ $toko->nama_toko }}">
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Last Name
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Alamat Toko
                                     <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input type="text" id="last-name" name="last-name" required="required"
-                                        class="form-control">
+                                    <input type="text" id="last-name" name="alamat" required="required"
+                                        class="form-control" value="{{ $toko->alamat }}">
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Middle
-                                    Name / Initial</label>
+                                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Nomor
+                                    Telepon</label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input id="middle-name" class="form-control" type="text" name="middle-name">
+                                    <input id="middle-name" class="form-control" type="text"
+                                        value="{{ $toko->nomor_telp}}" name="nomor_telp">
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align">Gender</label>
+                                <label for="middle-name"
+                                    class="col-form-label col-md-3 col-sm-3 label-align">Deskripsi</label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <div id="gender" class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-secondary" data-toggle-class="btn-primary"
-                                            data-toggle-passive-class="btn-default">
-                                            <input type="radio" name="gender" value="male" class="join-btn"> &nbsp; Male
-                                            &nbsp;
-                                        </label>
-                                        <label class="btn btn-primary" data-toggle-class="btn-primary"
-                                            data-toggle-passive-class="btn-default">
-                                            <input type="radio" name="gender" value="female" class="join-btn"> Female
-                                        </label>
-                                    </div>
+                                    <input id="middle-name" class="form-control" value="{{ $toko->deskripsi }}"
+                                        type="text" name="deskripsi">
                                 </div>
                             </div>
-                            <div class="item form-group">
-                                <label class="col-form-label col-md-3 col-sm-3 label-align">Date Of Birth <span
-                                        class="required">*</span>
-                                </label>
-                                <div class="col-md-6 col-sm-6 ">
-                                    <input id="birthday" class="date-picker form-control" placeholder="dd-mm-yyyy"
-                                        type="text" required="required" type="text" onfocus="this.type='date'"
-                                        onmouseover="this.type='date'" onclick="this.type='date'"
-                                        onblur="this.type='text'" onmouseout="timeFunctionLong(this)">
-                                    <script>
-                                        function timeFunctionLong(input) {
-                                            setTimeout(function () {
-                                                input.type = 'text';
-                                            }, 60000);
-                                        }
 
-                                    </script>
-                                </div>
-                            </div>
-                            <div class="x_panel">
-                                <div class="x_content">
-                                    <div id="alerts"></div>
-                                    <div class="btn-toolbar editor" data-role="editor-toolbar"
-                                        data-target="#editor-one">
-                                        <div class="btn-group">
-                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i
-                                                    class="fa fa-font"></i><b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                            </ul>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i
-                                                    class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a data-edit="fontSize 5">
-                                                        <p style="font-size:17px">Huge</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-edit="fontSize 3">
-                                                        <p style="font-size:14px">Normal</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-edit="fontSize 1">
-                                                        <p style="font-size:11px">Small</p>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i
-                                                    class="fa fa-bold"></i></a>
-                                            <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i
-                                                    class="fa fa-italic"></i></a>
-                                            <a class="btn" data-edit="strikethrough" title="Strikethrough"><i
-                                                    class="fa fa-strikethrough"></i></a>
-                                            <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i
-                                                    class="fa fa-underline"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i
-                                                    class="fa fa-list-ul"></i></a>
-                                            <a class="btn" data-edit="insertorderedlist" title="Number list"><i
-                                                    class="fa fa-list-ol"></i></a>
-                                            <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i
-                                                    class="fa fa-dedent"></i></a>
-                                            <a class="btn" data-edit="indent" title="Indent (Tab)"><i
-                                                    class="fa fa-indent"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i
-                                                    class="fa fa-align-left"></i></a>
-                                            <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i
-                                                    class="fa fa-align-center"></i></a>
-                                            <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i
-                                                    class="fa fa-align-right"></i></a>
-                                            <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i
-                                                    class="fa fa-align-justify"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i
-                                                    class="fa fa-link"></i></a>
-                                            <div class="dropdown-menu input-append">
-                                                <input class="span2" placeholder="URL" type="text"
-                                                    data-edit="createLink" />
-                                                <button class="btn" type="button">Add</button>
-                                            </div>
-                                            <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i
-                                                    class="fa fa-cut"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn" title="Insert picture (or just drag & drop)"
-                                                id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-                                            <input type="file" data-role="magic-overlay" data-target="#pictureBtn"
-                                                data-edit="insertImage" />
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i
-                                                    class="fa fa-undo"></i></a>
-                                            <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i
-                                                    class="fa fa-repeat"></i></a>
-                                        </div>
-                                    </div>
-
-                                    <div id="editor-one" class="editor-wrapper"></div>
-
-                                    <textarea name="descr" id="descr" style="display:none;"></textarea>
-
-                                </div>
-                            </div>
                             <div class="ln_solid"></div>
                             <div class="item form-group">
                                 <div class="col-md-6 col-sm-6 offset-md-3">
@@ -223,6 +103,139 @@
                             </div>
 
                         </form>
+                        @else
+                        <div class="clearfix"></div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Wajib Dibaca</h2>
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                            <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <h3>Ketentuan Penggunaan untuk Membuka Toko di "Rumah Unggas Kita"</h3>
+                                        <p><strong>1. Pengantar</strong></p>
+                                        <p>Dengan mendaftar dan membuka toko di "Rumah Unggas Kita", Anda setuju untuk
+                                            mematuhi dan terikat oleh syarat dan ketentuan berikut. Ketentuan ini
+                                            mengatur penggunaan situs web kami dan layanan yang kami sediakan. Jika Anda
+                                            tidak setuju dengan bagian mana pun dari ketentuan ini, Anda tidak boleh
+                                            membuka toko atau menggunakan layanan kami.</p>
+
+                                        <p><strong>2. Pendaftaran Toko</strong></p>
+                                        <p>Untuk membuka toko di "Rumah Unggas Kita", Anda harus menyelesaikan proses
+                                            pendaftaran dengan memberikan informasi yang terkini, lengkap, dan akurat
+                                            sesuai yang diperlukan oleh formulir pendaftaran kami. Anda bertanggung
+                                            jawab untuk menjaga kerahasiaan informasi akun Anda dan untuk semua
+                                            aktivitas yang terjadi di bawah akun Anda.</p>
+
+                                        <p><strong>3. Kepatuhan Terhadap Hukum</strong></p>
+                                        <p>Anda setuju untuk mematuhi semua hukum dan peraturan yang berlaku terkait
+                                            operasi toko Anda dan produk yang Anda tawarkan. Ini termasuk, namun tidak
+                                            terbatas pada, hukum perlindungan konsumen, hukum kekayaan intelektual, dan
+                                            peraturan perpajakan.</p>
+
+                                        <p><strong>4. Konten Toko</strong></p>
+                                        <p>Anda bertanggung jawab atas semua konten dan materi yang Anda poskan atau
+                                            tampilkan di toko Anda, termasuk deskripsi produk, harga, dan gambar. Anda
+                                            menjamin bahwa Anda memiliki atau telah memperoleh lisensi, hak, dan izin
+                                            yang diperlukan untuk menggunakan dan mendistribusikan semua konten yang
+                                            diposkan di toko Anda.</p>
+
+                                        <p><strong>5. Aktivitas yang Dilarang</strong></p>
+                                        <p>Anda setuju untuk tidak terlibat dalam aktivitas berikut yang dilarang:</p>
+                                        <ul>
+                                            <li>Menjual produk ilegal, palsu, atau curian.</li>
+                                            <li>Terlibat dalam praktik penipuan atau menyesatkan.</li>
+                                            <li>Memposting konten yang cabul, memfitnah, atau merugikan.</li>
+                                            <li>Melanggar hak kekayaan intelektual pihak lain.</li>
+                                        </ul>
+
+                                        <p><strong>6. Biaya dan Pembayaran</strong></p>
+                                        <p>Dengan membuka toko, Anda setuju untuk membayar semua biaya dan biaya yang
+                                            berlaku sesuai dengan jadwal biaya kami. Pembayaran untuk transaksi yang
+                                            dilakukan melalui toko Anda akan diproses sesuai dengan kebijakan pembayaran
+                                            kami.</p>
+
+                                        <p><strong>7. Penghentian</strong></p>
+                                        <p>Kami berhak untuk menangguhkan atau menghentikan akun toko Anda jika Anda
+                                            melanggar ketentuan ini atau terlibat dalam perilaku yang kami anggap
+                                            merugikan situs web kami atau pengguna lainnya. Setelah penghentian, Anda
+                                            harus segera menghentikan semua penggunaan layanan kami.</p>
+
+                                        <p><strong>8. Batasan Tanggung Jawab</strong></p>
+                                        <p>"Rumah Unggas Kita" tidak akan bertanggung jawab atas kerugian langsung,
+                                            tidak langsung, insidental, khusus, atau konsekuensial yang diakibatkan dari
+                                            penggunaan atau ketidakmampuan untuk menggunakan layanan kami, termasuk
+                                            namun tidak terbatas pada, kehilangan keuntungan, data, atau kerugian tidak
+                                            berwujud lainnya.</p>
+
+                                        <p><strong>9. Perubahan</strong></p>
+                                        <p>Kami berhak untuk mengubah ketentuan ini kapan saja. Setiap perubahan akan
+                                            diposkan di situs web kami, dan penggunaan layanan Anda yang berkelanjutan
+                                            setelah perubahan tersebut akan dianggap sebagai penerimaan Anda terhadap
+                                            ketentuan baru.</p>
+
+                                        <p><strong>10. Informasi Kontak</strong></p>
+                                        <p>Jika Anda memiliki pertanyaan atau kekhawatiran mengenai ketentuan ini,
+                                            silakan hubungi kami di <a href="#">Admin Rumah Unggas Kita</a>.</p>
+                                        <button id="agreeButton" class="btn btn-success">Saya Paham dan Saya Akan
+                                            Menaati</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="formContainer" style="display:none;">
+                            <form action="{{ url('user/toko') }}" method="POST" id="demo-form2" data-parsley-validate
+                                class="form-horizontal form-label-left">
+                                @csrf
+                                <p>Anda belum membuka toko, silahkan buka toko anda terlebih dahulu</p>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama
+                                        Toko <span class="required">*</span></label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input type="text" id="first-name" required="required" class="form-control"
+                                            name="nama_toko">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Alamat
+                                        Toko <span class="required">*</span></label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input type="text" id="last-name" name="alamat" required="required"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Nomor
+                                        Telepon</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input id="middle-name" class="form-control" type="text" name="nomor_telp">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label for="middle-name"
+                                        class="col-form-label col-md-3 col-sm-3 label-align">Deskripsi</label>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input id="middle-name" class="form-control" type="text" name="deskripsi">
+                                    </div>
+                                </div>
+                                <div class="ln_solid"></div>
+                                <div class="item form-group">
+                                    <div class="col-md-6 col-sm-6 offset-md-3">
+                                        <button class="btn btn-primary" type="button">Cancel</button>
+                                        <button class="btn btn-primary" type="reset">Reset</button>
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -241,6 +254,15 @@
 </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#agreeButton').on('click', function () {
+            $('#formContainer').show();
+        });
+    });
+
+</script>
 <!-- jQuery -->
 <script src="{{url('')}}/admin/vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->

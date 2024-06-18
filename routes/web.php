@@ -24,13 +24,9 @@ Route::middleware(['login'])->group(function () {
 
 
     Route::middleware(['seller'])->group(function () {
-
-        Route::resource('seller/dashboard','Seller\DashboardController');
-        Route::resource('seller/toko','Seller\TokoController');
+        Route::resource('user/dashboard','Seller\DashboardController');
+        Route::resource('user/toko','Seller\TokoController');
+        Route::resource('user/profile','Seller\UsersController');
     });
 
-    Route::middleware(['buyer'])->group(function () {
-
-        Route::resource('buyer/dashboard','Buyer\DashboardController');
-    });
 });

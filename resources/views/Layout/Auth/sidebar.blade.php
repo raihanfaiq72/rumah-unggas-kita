@@ -1,15 +1,19 @@
+@php
+$toko = App\Models\TokoModel::where('idUsers',session()->get('id'))->first();
+@endphp
 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
     <div class="menu_section">
         <h3>General</h3>
         <ul class="nav side-menu">
-            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="{{ url('seller/toko')}}/create">toko</a></li>
-                    <li><a href="index2.html">Dashboard2</a></li>
-                    <li><a href="index3.html">Dashboard3</a></li>
-                </ul>
+            <li>
+                <a href="{{url('user/dashboard')}}"><i class="fa fa-home"></i> Home</a>
             </li>
-            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+            <li>
+                <a href="{{url('user/profile/'.session()->get('id'))}}/edit"><i class="fa fa-home"></i> Profile</a>
+            </li>
+            @if($toko)
+            <h3>Toko Anda</h3>
+            <li><a><i class="fa fa-edit"></i> {{$toko->nama_toko}} <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="form.html">General Form</a></li>
                     <li><a href="form_advanced.html">Advanced Components</a></li>
@@ -19,6 +23,12 @@
                     <li><a href="form_buttons.html">Form Buttons</a></li>
                 </ul>
             </li>
+            @else
+            <li>
+                <a href="{{ url('user/toko')}}/create"><i class="fa fa-edit"></i> Buka Toko Anda </span></a>
+            </li>
+            @endif
+
             <li><a href="{{url('logout')}}"><i class="glyphicon glyphicon-off"></i> Logout </a>
             </li>
         </ul>

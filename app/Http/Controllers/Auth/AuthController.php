@@ -69,6 +69,18 @@ class AuthController extends Controller
         }
 
 
+        // $session = [
+        //     'id'            => $userLogin->id,
+        //     'nama_lengkap'  => $userLogin->nama_lengkap,
+        //     'username'      => $userLogin->username,
+        //     'role'          => $userLogin->role,
+        //     'isLogin'       => TRUE
+        // ];
+
+        // session($session);
+
+        // return redirect('user/dashboard')->with('sukses','Selamat Datang Kembali');
+
         if($userLogin->role == 1){
             $session = [
                 'id'            => $userLogin->id,
@@ -80,7 +92,7 @@ class AuthController extends Controller
 
             session($session);
 
-            return redirect('seller/dashboard')->with('sukses','Selamat Datang Kembali');
+            return redirect('user/dashboard')->with('sukses','Selamat Datang Kembali');
         }elseif($userLogin->role == 2){
             $session = [
                 'id'            => $userLogin->id,

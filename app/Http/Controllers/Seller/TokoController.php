@@ -8,12 +8,68 @@ use App\Models\TokoModel;
 
 class TokoController extends Controller
 {
-    private $views = 'Seller/Toko';
+    private $views  = 'Seller/Toko';
+    private $url    = 'seller/toko';
+    // private $session = session()->get('idUsers');
 
     public function create()
     {
         return view("$this->views"."/create",[
             'toko'  => TokoModel::where('idUsers',session()->get('id'))->first() 
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        $validator = $request->validate([
+            'nama_toko' => 'required',
+            'deskripsi' => 'required',
+            'alamat'    => 'required',
+            'nomor_telp'=> 'required'
+        ]);
+        // dd([
+        //     'nama_toko' => $request->nama_toko,
+        //     'deskripsi' => $request->deskripsi,
+        //     'alamat'    => $request->alamat,
+        //     'nomor_telp'=> $request->nomor_telp
+        // ]);
+        $session = session()->get('id');
+
+        TokoModel::create([
+            'idUsers'   => session()->get('id'),
+            'nama_toko' => $request->nama_toko,
+            'deskripsi' => $request->deskripsi,
+            'alamat'    => $request->alamat,
+            'nomor_telp'=> $request->nomor_telp
+        ]);
+
+        return redirect("user/dashboard")->with('sukses','toko berhasil di buat');
+    }
+
+    public function edit($id)
+    {
+        return view("$this->views"."/create",[
+            'toko'  => TokoModel::where('idUsers',session()->get('id'))->first() 
+        ]);
+    }
+
+    public function update(Request $request )
+    {
+        $validator = $request->validate([
+            'nama_toko' => 'required',
+            'deskripsi' => 'required',
+            'alamat'    => 'required',
+            'nomor_telp'=> 'required'
+        ]);
+
+        TokoModel::create([
+            'idUsers'   => session()->get('id'),
+            'nama_toko' => $request->nama_toko,
+            'deskripsi' => $request->deskripsi,
+            'alamat'    => $request->alamat,
+            'nomor_telp'=> $request->nomor_telp
+        ]);
+
+        return redirect("$this->url"."/create")->with('sukses','toko berhasil di buat');
     }
 }
