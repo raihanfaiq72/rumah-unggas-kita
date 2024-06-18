@@ -53,9 +53,10 @@
                     </div>
                     <div class="x_content">
                         <br />
-                        <form action="{{url('user/item-toko')}}" method="POST" id="demo-form2" data-parsley-validate
+                        <form action="{{url('user/item-toko')}}/update" method="POST" id="demo-form2" data-parsley-validate
                             class="form-horizontal form-label-left" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             @if (session()->has('sukses'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('sukses') }}
@@ -74,13 +75,14 @@
                                 </ul>
                             </div>
                             @endif
+                            <input type="hidden" name="id" value="{{$data->id}}">
                             <div class="item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama Barang
                                     <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input type="text" id="first-name" required="required" class="form-control "
-                                        name="nama">
+                                        name="nama" value="{{$data->nama}}">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -89,21 +91,21 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input type="text" id="last-name" name="deskripsi" required="required"
-                                        class="form-control">
+                                        class="form-control" value="{{$data->deskripsi}}">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="middle-name"
                                     class="col-form-label col-md-3 col-sm-3 label-align">Harga</label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input id="middle-name" class="form-control" type="text" name="harga">
+                                    <input id="middle-name" class="form-control" type="text" name="harga" value="{{$data->harga}}">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="middle-name"
                                     class="col-form-label col-md-3 col-sm-3 label-align">Stok</label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input id="middle-name" class="form-control" type="text" name="stok">
+                                    <input id="middle-name" class="form-control" type="text" name="stok" value="{{$data->stok}}">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -111,7 +113,7 @@
                                     class="col-form-label col-md-3 col-sm-3 label-align">Status</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <select name="status" id="">
-                                        <option value="1">Posting</option>
+                                        <option value="1" default>Posting</option>
                                         <option value="2">Draft</option>
                                         <option value="3">Habis</option>
                                     </select>
@@ -130,6 +132,15 @@
                                     Gambar</label>
                                 <div class="col-md-6 col-sm-6">
                                     <img id="image-preview" src="#" alt="Preview Gambar"
+                                        style="display: none; width: 100%; max-width: 300px;" />
+                                </div>
+                            </div>
+
+                            <div class="item form-group">
+                                <label for="image-preview" class="col-form-label col-md-3 col-sm-3 label-align">Preview
+                                    Gambar Sebelumnya</label>
+                                <div class="col-md-6 col-sm-6">
+                                    <img id="image-preview" src="{{ url('') }}/admin/upload/{{$data->gambar}}" alt="Preview Gambar"
                                         style="display: none; width: 100%; max-width: 300px;" />
                                 </div>
                             </div>
