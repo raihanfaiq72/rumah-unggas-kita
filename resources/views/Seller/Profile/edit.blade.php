@@ -57,6 +57,24 @@
                             data-parsley-validate class="form-horizontal form-label-left">
                             @csrf
                             @method('PUT')
+                            @if (session()->has('sukses'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('sukses') }}
+                            </div>
+                            @elseif (session()->has('gagal'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ session('gagal') }}
+                            </div>
+                            @elseif (count($errors) > 0)
+                            <div class="alert alert-danger" role="alert">
+                                <strong>Terjadi kesalahan:</strong>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
                             <input type="hidden" name="id" value="{{ $profile->id }}">
                             <div class="item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Username

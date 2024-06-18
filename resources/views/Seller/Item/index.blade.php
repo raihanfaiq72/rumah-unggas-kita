@@ -29,12 +29,29 @@
         </div>
 
         <div class="clearfix"></div>
-
+        @if (session()->has('sukses'))
+            <div class="alert alert-success" role="alert">
+                {{ session('sukses') }}
+            </div>
+            @elseif (session()->has('gagal'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('gagal') }}
+            </div>
+            @elseif (count($errors) > 0)
+            <div class="alert alert-danger" role="alert">
+                <strong>Terjadi kesalahan:</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
         <div class="row">
             <div class="col-md-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Media Gallery <small> gallery design </small></h2>
+                        <h2>Media Gallery <small> <a href="{{url('user/item-toko/create')}}"><button>Tambah barang</button></a> </small></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -54,10 +71,13 @@
                     <div class="x_content">
 
                         <div class="row">
+                            @if($data->isNotEmpty())
+                            @foreach($data as $p)
                             <div class="col-md-55">
                                 <div class="thumbnail">
                                     <div class="image view view-first">
-                                        <img style="width: 100%; display: block;" src="images/media.jpg" alt="image" />
+                                        <img style="width: 100%; display: block;" src="{{ url('') }}/admin/upload/"
+                                            alt="image" />
                                         <div class="mask">
                                             <p>Your Text</p>
                                             <div class="tools tools-bottom">
@@ -68,28 +88,18 @@
                                         </div>
                                     </div>
                                     <div class="caption">
-                                        <p>Snow and Ice Incoming for the South</p>
+                                        <p>{{ $p->nama ?? 'data kosong' }}</p>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
+                            @else
                             <div class="col-md-55">
-                                <div class="thumbnail">
-                                    <div class="image view view-first">
-                                        <img style="width: 100%; display: block;" src="images/media.jpg" alt="image" />
-                                        <div class="mask">
-                                            <p>Your Text</p>
-                                            <div class="tools tools-bottom">
-                                                <a href="#"><i class="fa fa-link"></i></a>
-                                                <a href="#"><i class="fa fa-pencil"></i></a>
-                                                <a href="#"><i class="fa fa-times"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="caption">
-                                        <p>Snow and Ice Incoming for the South</p>
-                                    </div>
-                                </div>
+                                <h2>Bjir kosong ... !</h2>
                             </div>
+                            @endif
+
+
                         </div>
                     </div>
                 </div>

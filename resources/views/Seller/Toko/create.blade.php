@@ -55,10 +55,29 @@
                         <br />
                         @if($toko)
                         <p>Selamat datang di toko anda , silahkan manage toko anda</p>
-                        <form action="{{url('seller/toko')}}/update" method="POST" id="demo-form2" data-parsley-validate
+                        @if (session()->has('sukses'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('sukses') }}
+                        </div>
+                        @elseif (session()->has('gagal'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('gagal') }}
+                        </div>
+                        @elseif (count($errors) > 0)
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Terjadi kesalahan:</strong>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                        <form action="{{url('user/toko')}}/update" method="POST" id="demo-form2" data-parsley-validate
                             class="form-horizontal form-label-left">
                             @csrf
                             @method('PUT')
+                            <input type="hidden" name="id" value="{{$toko->id}}">
                             <div class="item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Nama Toko
                                     <span class="required">*</span>

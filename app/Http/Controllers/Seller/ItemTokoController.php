@@ -14,17 +14,23 @@ class ItemTokoController extends Controller
 
     public function index()
     {
-        return view("$this->views"."/index",[
-            // 'data'  => TokoModel::get()
-            // dd(TokoModel::get())
+        $toko = TokoModel::where('idUsers', session()->get('id'))->first();
+    
+        if ($toko) {
+            $items = ItemModel::where('idToko', $toko->id)->get();
+        } else {
+            $items = collect(); 
+        }
+
+        return view("$this->views.index", [
+            'data' => $items
         ]);
     }
 
+
     public function create()
     {
-        return view("$this->views"."/create",[
-            
-        ]);
+        return view("$this->views"."/create");
     }
 
 

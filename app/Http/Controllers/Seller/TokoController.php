@@ -9,7 +9,7 @@ use App\Models\TokoModel;
 class TokoController extends Controller
 {
     private $views  = 'Seller/Toko';
-    private $url    = 'seller/toko';
+    private $url    = 'user/toko';
     // private $session = session()->get('idUsers');
 
     public function create()
@@ -62,7 +62,7 @@ class TokoController extends Controller
             'nomor_telp'=> 'required'
         ]);
 
-        TokoModel::create([
+        TokoModel::where('id',$request->id)->update([
             'idUsers'   => session()->get('id'),
             'nama_toko' => $request->nama_toko,
             'deskripsi' => $request->deskripsi,
@@ -70,6 +70,6 @@ class TokoController extends Controller
             'nomor_telp'=> $request->nomor_telp
         ]);
 
-        return redirect("$this->url"."/create")->with('sukses','toko berhasil di buat');
+        return redirect("$this->url/".$request->id."/edit")->with('sukses','toko berhasil di Edit');
     }
 }

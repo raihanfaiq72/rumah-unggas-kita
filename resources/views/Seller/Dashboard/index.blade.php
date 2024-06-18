@@ -10,6 +10,24 @@
 
 @section('sudahlogin')
 <div class="right_col" role="main">
+    @if (session()->has('sukses'))
+    <div class="alert alert-success" role="alert">
+        {{ session('sukses') }}
+    </div>
+    @elseif (session()->has('gagal'))
+    <div class="alert alert-danger" role="alert">
+        {{ session('gagal') }}
+    </div>
+    @elseif (count($errors) > 0)
+    <div class="alert alert-danger" role="alert">
+        <strong>Terjadi kesalahan:</strong>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <!-- top tiles -->
     <div class="row" style="display: inline-block;">
         <div class="tile_count">
