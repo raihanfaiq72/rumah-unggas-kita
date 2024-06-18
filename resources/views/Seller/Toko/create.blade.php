@@ -13,7 +13,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Form Elements</h3>
+                <h3>Toko Anda!</h3>
             </div>
 
             <div class="title_right">
@@ -32,7 +32,7 @@
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Form Design <small>different form elements</small></h2>
+                        <h2>Informasi Toko</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -266,7 +266,7 @@
 <!-- footer content -->
 <footer>
     <div class="pull-right">
-        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        Kelompok Tiga <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tatlerasia.com%2Fpeople%2Fganjar-pranowo&psig=AOvVaw3w_nG4yuHPSny2mExiV4Rn&ust=1718814896610000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCLiMwuDK5YYDFQAAAAAdAAAAABAE">Coblos nomor 3</a>
     </div>
     <div class="clearfix"></div>
 </footer>

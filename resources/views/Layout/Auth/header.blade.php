@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Gentelella Alela!</title>
+    <title>Rumah Unggas Kita</title>
 
     <!-- Bootstrap -->
     <link href="{{url('')}}/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,8 +39,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella
-                                Alela!</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Rumah Unggas</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -93,7 +92,7 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="{{url('')}}/admin/production/images/img.jpg" alt="">John Doe
+                                    <img src="{{url('')}}/admin/production/images/img.jpg" alt="">{{ session()->get('nama_lengkap')}}</>
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
