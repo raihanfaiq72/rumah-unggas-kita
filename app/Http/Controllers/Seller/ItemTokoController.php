@@ -28,16 +28,17 @@ class ItemTokoController extends Controller
         }
 
         return view("$this->views.index", [
-            'data' => $items
+            'data' => $items,
+            'title' => 'Item Toko'
         ]);
     }
 
-
     public function create()
     {
-        return view("$this->views"."/create");
+        return view("$this->views.create", [
+            'title' => 'Item Toko'
+        ]);
     }
-
 
     public function store(Request $request)
     {
@@ -49,27 +50,14 @@ class ItemTokoController extends Controller
             'photo'     => 'required|file|mimes:jpeg,png,jpg,gif,webp'
         ]);
 
-        $toko = TokoModel::where('idUsers',session()->get('id'))->first();
-        $item = ItemModel::where('idToko',$toko->id)->get();
+        $toko = TokoModel::where('idUsers', session()->get('id'))->first();
+        $item = ItemModel::where('idToko', $toko->id)->get();
         $tunjuk = $toko->id;
         if ($request->hasFile('photo')) {
             $file       = $request->file('photo');
             $fileName   = Str::uuid() . "-" . time() . "." . $file->extension();
             $file->move("admin/upload/", $fileName);
         }
-        
-        // 'data'  => TokoModel::get()
-        // dd(TokoModel::get())
-        // dd($item);
-
-        // json_encode([
-        //     'idToko'    => $toko,
-        //     'nama'      => $request->nama,
-        //     'harga'     => $request->harga,
-        //     'deskripsi' => $request->deskripsi,
-        //     'stok'      => $request->stok ,
-        //     'status'    => $request->status
-        // ]);die;
 
         ItemModel::create([
             'idToko'    => $tunjuk,
@@ -86,54 +74,53 @@ class ItemTokoController extends Controller
 
     public function edit($id)
     {
-        return view("$this->views"."/edit",[
-            'data'  => ItemModel::where('id',$id)->first()
+        return view("$this->views.edit", [
+            'data'  => ItemModel::where('id', $id)->first(),
+            'title' => 'Rumah Unggas Kita'
         ]);
-
     }
 
     public function update(Request $request)
-{
-    $request->validate([
-        // 'nama'      => 'required',
-        // 'harga'     => 'required',
-        // 'deskripsi' => 'required',
-        // 'stok'      => 'required',
-        // 'photo'     => 'required|file|mimes:jpeg,png,jpg,gif,webp'
-    ]);
-
-    $toko = TokoModel::where('idUsers', session()->get('id'))->first();
-    $item = ItemModel::where('idToko', $toko->id)->get();
-    $tunjuk = $toko->id;
-
-    if ($request->hasFile('photo')) {
-        $file       = $request->file('photo');
-        $fileName   = Str::uuid() . "-" . time() . "." . $file->extension();
-        $file->move("admin/upload/", $fileName);
-
-        ItemModel::where('id', $request->id)->update([
-            'idToko'    => $tunjuk,
-            'nama'      => $request->nama,
-            'harga'     => $request->harga,
-            'deskripsi' => $request->deskripsi,
-            'stok'      => $request->stok,
-            'status'    => $request->status,
-            'gambar'    => $fileName
+    {
+        $request->validate([
+            // 'nama'      => 'required',
+            // 'harga'     => 'required',
+            // 'deskripsi' => 'required',
+            // 'stok'      => 'required',
+            // 'photo'     => 'required|file|mimes:jpeg,png,jpg,gif,webp'
         ]);
 
-        return redirect("user/item-toko")->with('sukses', 'Data berhasil di edit dengan gambar');
-    } else {
-        ItemModel::where('id', $request->id)->update([
-            'idToko'    => $tunjuk,
-            'nama'      => $request->nama,
-            'harga'     => $request->harga,
-            'deskripsi' => $request->deskripsi,
-            'stok'      => $request->stok,
-            'status'    => $request->status,
-        ]);
+        $toko = TokoModel::where('idUsers', session()->get('id'))->first();
+        $item = ItemModel::where('idToko', $toko->id)->get();
+        $tunjuk = $toko->id;
 
-        return redirect("user/item-toko")->with('sukses', 'Data berhasil di edit');
+        if ($request->hasFile('photo')) {
+            $file       = $request->file('photo');
+            $fileName   = Str::uuid() . "-" . time() . "." . $file->extension();
+            $file->move("admin/upload/", $fileName);
+
+            ItemModel::where('id', $request->id)->update([
+                'idToko'    => $tunjuk,
+                'nama'      => $request->nama,
+                'harga'     => $request->harga,
+                'deskripsi' => $request->deskripsi,
+                'stok'      => $request->stok,
+                'status'    => $request->status,
+                'gambar'    => $fileName
+            ]);
+
+            return redirect("user/item-toko")->with('sukses', 'Data berhasil di edit dengan gambar');
+        } else {
+            ItemModel::where('id', $request->id)->update([
+                'idToko'    => $tunjuk,
+                'nama'      => $request->nama,
+                'harga'     => $request->harga,
+                'deskripsi' => $request->deskripsi,
+                'stok'      => $request->stok,
+                'status'    => $request->status,
+            ]);
+
+            return redirect("user/item-toko")->with('sukses', 'Data berhasil di edit');
+        }
     }
-}
-
 }

@@ -11,6 +11,7 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view("$this->views"."/Dashboard/index");
+        $title = "Dashboard";
+        return view("$this->views"."/Dashboard/index")->with('title', $title);
     }
 }

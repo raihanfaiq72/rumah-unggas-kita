@@ -15,7 +15,8 @@ class TokoController extends Controller
     public function create()
     {
         return view("$this->views"."/create",[
-            'toko'  => TokoModel::where('idUsers',session()->get('id'))->first() 
+            'toko'  => TokoModel::where('idUsers',session()->get('id'))->first(),
+            'title' => 'Toko Anda' 
         ]);
     }
 
@@ -49,7 +50,8 @@ class TokoController extends Controller
     public function edit($id)
     {
         return view("$this->views"."/create",[
-            'toko'  => TokoModel::where('idUsers',session()->get('id'))->first() 
+            'toko'  => TokoModel::where('idUsers',session()->get('id'))->first(),
+            'title' => 'Toko Anda' 
         ]);
     }
 
