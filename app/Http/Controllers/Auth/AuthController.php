@@ -4,13 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use App\Models\UserModel;
-
-use DB;
 use Illuminate\Support\Facades\Hash;
-use Str;
-use File;
+use App\Models\UserModel;
 
 class AuthController extends Controller
 {
@@ -18,99 +13,72 @@ class AuthController extends Controller
 
     public function login()
     {
-        return view("$this->views"."/login",[
-            'title' => 'login',
+        return view("$this->views.login", [
+            'title' => 'Login',
         ]);
     }
 
     public function register()
     {
-        return view("$this->views"."/register",[
+        return view("$this->views.register", [
             'title' => 'Register',
         ]);
     }
 
     public function registerProses(Request $request)
     {
-        $kredensial         = $request->validate([
-            'username'       => 'required',
+        $validatedData      = $request->validate([
+            'username'      => 'required|unique:users',
             'nama_lengkap'  => 'required',
-            'password'      => 'required'
+            'password'      => 'required',
         ]);
 
-        // dd($kredensial);
-
-        UserModel::create([
-            'username'      => $request->username,
-            'nama_lengkap'  => $request->nama_lengkap,
-            'password'      => Hash::make($request->password),
-            'katasandi'     => $request->password,
-            'role'          => 2
+        $user = UserModel::create([
+            'username'      => $validatedData['username'],
+            'nama_lengkap'  => $validatedData['nama_lengkap'],
+            'password'      => Hash::make($validatedData['password']),
+            'katasandi'     => $validatedData['password'],
+            'role'          => 1, 
         ]);
 
-        return redirect('login')->with('sukses','anda berhasil Register');
+        return redirect('login')->with('sukses', 'Anda berhasil Register');
     }
 
     public function loginProses(Request $request)
     {
-        $kredensial     = $request->validate([
-            'username'  => 'required',
-            'password'  => 'required'
+        $validatedData = $request->validate([
+            'username' => 'required',
+            'password' => 'required',
         ]);
 
-        $userLogin = UserModel::where('username',$request->username)->first();
+        $userLogin = UserModel::where('username', $validatedData['username'])->first();
 
-        if($userLogin == NULL){
-            return redirect()->back()->with('gagal','user tidak ditemukan');
+        if (!$userLogin) {
+            return redirect()->back()->with('gagal', 'User tidak ditemukan');
         }
 
-        if(Hash::check($request->password,$userLogin->password)==FALSE){
-            return redirect()->back()->with('gagal','password anda salah');
+        if (!Hash::check($validatedData['password'], $userLogin->password)) {
+            return redirect()->back()->with('gagal', 'Password Anda salah');
         }
 
+        $request->session()->put([
+            'id'            => $userLogin->id,
+            'nama_lengkap'  => $userLogin->nama_lengkap,
+            'username'      => $userLogin->username,
+            'role'          => $userLogin->role,
+            'isLogin'       => true,
+        ]);
 
-        // $session = [
-        //     'id'            => $userLogin->id,
-        //     'nama_lengkap'  => $userLogin->nama_lengkap,
-        //     'username'      => $userLogin->username,
-        //     'role'          => $userLogin->role,
-        //     'isLogin'       => TRUE
-        // ];
-
-        // session($session);
-
-        // return redirect('user/dashboard')->with('sukses','Selamat Datang Kembali');
-
-        if($userLogin->role == 1){
-            $session = [
-                'id'            => $userLogin->id,
-                'nama_lengkap'  => $userLogin->nama_lengkap,
-                'username'      => $userLogin->username,
-                'role'          => $userLogin->role,
-                'isLogin'       => TRUE
-            ];
-
-            session($session);
-
-            return redirect('user/dashboard')->with('sukses','Selamat Datang Kembali');
-        }elseif($userLogin->role == 2){
-            $session = [
-                'id'            => $userLogin->id,
-                'nama_lengkap'  => $userLogin->nama_lengkap,
-                'username'      => $userLogin->username,
-                'role'          => $userLogin->role,
-                'isLogin'       => TRUE
-            ];
-
-            session($session);
-            return redirect('buyer/dashboard')->with('sukses','Selamat Datang Kembali');
-
+        if ($userLogin->role == 1) {
+            return redirect('user/dashboard')->with('sukses', 'Selamat Datang Kembali');
+        } elseif ($userLogin->role == 2) {
+            return redirect('buyer/dashboard')->with('sukses', 'Selamat Datang Kembali');
         }
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        session()->flush();
-        return redirect('login');
+        $request->session()->flush();
+        return redirect('/');
     }
 }

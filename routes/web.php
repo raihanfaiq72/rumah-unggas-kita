@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','Buyer\DashboardController@index');
+Route::get('produk','Buyer\DashboardController@produk');
+Route::get('toko','Buyer\DashboardController@toko');
+Route::get('tentang-kami','Buyer\DashboardController@tentangkami');
+
 Route::get('login','Auth\AuthController@login');
 Route::post('loginProses','Auth\AuthController@loginProses');
 Route::get('register','Auth\AuthController@register');
@@ -28,6 +32,7 @@ Route::middleware(['login'])->group(function () {
         Route::resource('user/toko','Seller\TokoController');
         Route::resource('user/profile','Seller\UsersController');
         Route::resource('user/item-toko','Seller\ItemTokoController');
+        Route::resource('user/management-transaksi-toko','Seller\ManagementTransaksiTokoController');
     });
 
 });

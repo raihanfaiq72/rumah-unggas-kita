@@ -18,7 +18,7 @@ class LoginSeller
     public function handle(Request $request, Closure $next)
     {
         if (session()->get('role') != '1') {
-            return redirect()->to('/')->with('gagal', 'Mohon Maaf Fitur Seller');
+            return redirect()->to('login')->with('gagal', 'Mohon Maaf Silahkan login atau fitur tidak dapat diakses');
         }
         return $next($request);
     }

@@ -161,7 +161,8 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Ayam</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional yang bernama
+                                                hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -175,13 +176,15 @@
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative fruite-item">
                                         <div class="fruite-img">
-                                            <img src="img/Best-product-6.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            <img src="img/Best-product-6.jpg" class="img-fluid w-100 rounded-top"
+                                                alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Bebek</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional yang bernama
+                                                hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -201,7 +204,8 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Paha Ayam</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional yang bernama
+                                                hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                                 <a href="#"
@@ -221,7 +225,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Burung Dara</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -242,7 +246,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Burung Dara</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -263,7 +267,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Bebek</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -284,7 +288,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Paha Ayam</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -305,7 +309,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Paha Ayam</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -334,7 +338,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Paha Ayam</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -355,7 +359,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Paha Ayam</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -384,7 +388,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Bebek</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -405,7 +409,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Bebek</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -428,13 +432,14 @@
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative fruite-item">
                                         <div class="fruite-img">
-                                            <img src="img/best-product-3.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                            <img src="img/best-product-3.jpg" class="img-fluid w-100 rounded-top"
+                                                alt="">
                                         </div>
                                         <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Burung Dara</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -455,7 +460,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Burung Dara</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional 
+                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
