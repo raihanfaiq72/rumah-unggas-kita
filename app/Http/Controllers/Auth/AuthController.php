@@ -92,7 +92,7 @@ class AuthController extends Controller
 
             session($session);
 
-            return redirect('user/dashboard')->with('sukses','Selamat Datang Kembali');
+            return redirect('/')->with('sukses','Selamat Datang Kembali');
         }elseif($userLogin->role == 2){
             $session = [
                 'id'            => $userLogin->id,
@@ -111,6 +111,6 @@ class AuthController extends Controller
     public function logout()
     {
         session()->flush();
-        return redirect('login');
+        return redirect('/');
     }
 }

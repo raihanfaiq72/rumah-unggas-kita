@@ -12,4 +12,19 @@ class DashboardController extends Controller
     {
         return view("$this->views"."/index");
     }
+
+    public function produk()
+    {
+        return view("$this->views"."/produk");
+    }
+
+    public function toko()
+    {
+        return view("$this->views"."/toko");
+    }
+
+    public function tentangkami()
+    {
+        return view("$this->views"."/kontak");
+    }
 }
