@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Rumah Unggas Kita</title>
+    <title>{{ $title }}</title>
 
     <!-- Bootstrap -->
     <link href="{{url('')}}/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -185,4 +185,4 @@
 
             <!-- page content -->
             @yield('sudahlogin')
-            <!-- /page content -->
+            <!-- /page content --> 

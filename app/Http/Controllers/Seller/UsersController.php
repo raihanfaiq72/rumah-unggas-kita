@@ -14,7 +14,8 @@ class UsersController extends Controller
     public function edit($id)
     {
         return view("$this->views"."/edit",[
-            'profile' => UserModel::where('id',$id)->first()
+            'profile' => UserModel::where('id',$id)->first(),
+            'title' => 'Profile'
         ]);
     }
 
