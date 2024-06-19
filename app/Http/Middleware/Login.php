@@ -18,7 +18,7 @@ class Login
     public function handle(Request $request, Closure $next)
     {
         if (session()->get('isLogin') != true) {
-            return redirect()->to('/')->with('gagal', 'Silahkan login');
+            return redirect()->to('login')->with('gagal', 'Silahkan login');
         }
         return $next($request);
     }

@@ -6,6 +6,9 @@ $toko = App\Models\TokoModel::where('idUsers',session()->get('id'))->first();
         <h3>General</h3>
         <ul class="nav side-menu">
             <li>
+                <a href="{{url('/')}}"><i class="fa fa-home"></i> Layar Utama</a>
+            </li>
+            <li>
                 <a href="{{url('user/dashboard')}}"><i class="fa fa-home"></i> Home</a>
             </li>
             <li>
@@ -13,8 +16,8 @@ $toko = App\Models\TokoModel::where('idUsers',session()->get('id'))->first();
             </li>
             <h3>Pesanan Anda</h3>
             <li><a href="#"><i class="fa fa-edit"></i> Check Out </a>
-            @if($toko)
-            <h3>Toko Anda</h3>
+                @if($toko)
+                <h3>Toko Anda</h3>
             <li><a><i class="fa fa-edit"></i> {{$toko->nama_toko}} <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="{{url('user/toko/'.$toko->id)}}/edit">Toko Anda</a></li>
