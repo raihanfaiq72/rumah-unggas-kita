@@ -27,17 +27,17 @@ class AuthController extends Controller
 
     public function registerProses(Request $request)
     {
-        $validatedData      = $request->validate([
+        $validasi      = $request->validate([
             'username'      => 'required|unique:users',
             'nama_lengkap'  => 'required',
             'password'      => 'required',
         ]);
 
         $user = UserModel::create([
-            'username'      => $validatedData['username'],
-            'nama_lengkap'  => $validatedData['nama_lengkap'],
-            'password'      => Hash::make($validatedData['password']),
-            'katasandi'     => $validatedData['password'],
+            'username'      => $validasi['username'],
+            'nama_lengkap'  => $validasi['nama_lengkap'],
+            'password'      => Hash::make($validasi['password']),
+            'katasandi'     => $validasi['password'],
             'role'          => 1, 
         ]);
 
@@ -46,18 +46,18 @@ class AuthController extends Controller
 
     public function loginProses(Request $request)
     {
-        $validatedData = $request->validate([
+        $validasi = $request->validate([
             'username' => 'required',
             'password' => 'required',
         ]);
 
-        $userLogin = UserModel::where('username', $validatedData['username'])->first();
+        $userLogin = UserModel::where('username', $validasi['username'])->first();
 
         if (!$userLogin) {
             return redirect()->back()->with('gagal', 'User tidak ditemukan');
         }
 
-        if (!Hash::check($validatedData['password'], $userLogin->password)) {
+        if (!Hash::check($validasi['password'], $userLogin->password)) {
             return redirect()->back()->with('gagal', 'Password Anda salah');
         }
 
