@@ -96,6 +96,18 @@
                             </div>
                             <div class="item form-group">
                                 <label for="middle-name"
+                                    class="col-form-label col-md-3 col-sm-3 label-align">Kategori</label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <select name="kategori" id="">
+                                        <option value="1">Ayam</option>
+                                        <option value="2">Bebek</option>
+                                        <option value="3">Dara</option>
+                                        <option value="4">Kalkun</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label for="middle-name"
                                     class="col-form-label col-md-3 col-sm-3 label-align">Harga</label>
                                 <div class="col-md-6 col-sm-6 ">
                                     <input id="middle-name" class="form-control" type="text" name="harga" value="{{$data->harga}}">

@@ -47,6 +47,7 @@ class ItemTokoController extends Controller
             'harga'     => 'required',
             'deskripsi' => 'required',
             'stok'      => 'required',
+            'kategori'  => 'required',
             'photo'     => 'required|file|mimes:jpeg,png,jpg,gif,webp'
         ]);
 
@@ -66,6 +67,7 @@ class ItemTokoController extends Controller
             'deskripsi' => $request->deskripsi,
             'stok'      => $request->stok ,
             'status'    => $request->status,
+            'kategori'  => $request->kategori,
             'gambar'    => $fileName
         ]);
 
@@ -106,6 +108,7 @@ class ItemTokoController extends Controller
                 'deskripsi' => $request->deskripsi,
                 'stok'      => $request->stok,
                 'status'    => $request->status,
+                'kategori'  => $request->kategori,
                 'gambar'    => $fileName
             ]);
 
@@ -118,6 +121,7 @@ class ItemTokoController extends Controller
                 'deskripsi' => $request->deskripsi,
                 'stok'      => $request->stok,
                 'status'    => $request->status,
+                'kategori'  => $request->kategori,
             ]);
 
             return redirect("user/item-toko")->with('sukses', 'Data berhasil di edit');
