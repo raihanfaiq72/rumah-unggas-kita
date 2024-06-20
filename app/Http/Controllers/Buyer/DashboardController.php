@@ -40,6 +40,15 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function tokoShow($id)
+    {
+        $toko = TokoModel::where('id',$id)->first();
+        $item = ItemModel::where('idToko',$toko->id)->get();
+        return view("$this->views"."/tokoShow",[
+            'data'  => $item
+        ]);
+    }
+
     public function tentangkami()
     {
         return view("$this->views"."/kontak");

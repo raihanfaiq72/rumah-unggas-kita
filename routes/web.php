@@ -17,7 +17,13 @@ Route::get('/','Buyer\DashboardController@index');
 Route::get('produk','Buyer\DashboardController@produk');
 Route::get('produk/{id}','Buyer\DashboardController@produkShow');
 Route::get('toko','Buyer\DashboardController@toko');
+Route::get('toko/produk/{id}','Buyer\DashboardController@tokoShow');
 Route::get('tentang-kami','Buyer\DashboardController@tentangkami');
+
+Route::fallback(function () {
+    return view('404.404');
+});
+
 
 Route::get('login','Auth\AuthController@login');
 Route::post('loginProses','Auth\AuthController@loginProses');

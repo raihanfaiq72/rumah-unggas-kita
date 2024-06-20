@@ -16,7 +16,7 @@
 
             @forelse($data as $p)
             <div class="col-md-6 col-lg-4">
-                <a href="{{url('toko/'.$p->id,[])}}">
+                <a href="{{url('toko/produk/'.$p->id,[])}}">
                     <div class="service-item bg-primary rounded border border-primary">
                         <img src="img/example.webp" class="img-fluid rounded-top w-100" alt="">
                         <div class="px-4 rounded-bottom">
