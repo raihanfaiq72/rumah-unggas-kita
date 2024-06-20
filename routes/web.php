@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','Buyer\DashboardController@index');
 Route::get('produk','Buyer\DashboardController@produk');
+Route::get('produk/{id}','Buyer\DashboardController@produkShow');
 Route::get('toko','Buyer\DashboardController@toko');
 Route::get('tentang-kami','Buyer\DashboardController@tentangkami');
 

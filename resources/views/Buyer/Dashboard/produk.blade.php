@@ -200,13 +200,27 @@
                             <div class="col-md-6 col-lg-6 col-xl-4">
                                 <div class="rounded position-relative fruite-item">
                                     <div class="fruite-img">
-                                        <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        @if($p->gambar)
+                                            <img src="admin/upload/{{$p->gambar}}" class="img-fluid w-100 rounded-top" alt="">
+                                        @else
+                                            <img src="img/fruite-item-5.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                        @endif
                                     </div>
                                     <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; left: 10px;">Fruits</div>
+                                        style="top: 10px; left: 10px;">
+                                        @if($p->kategori == 1)
+                                            Ayam
+                                        @elseif($p->kategori == 2)
+                                            Bebek
+                                        @elseif($p->kategori == 3)
+                                            Dara 
+                                        @else
+                                            Kalkun
+                                        @endif
+                                    </div>
                                     <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                        <h4>{{$p->nama}}</h4>
-                                        <p>{{$p->deskripsi}}</p>
+                                        <a href="{{url('produk/'.$p->id,[])}}"><h4>{{$p->nama}}</h4></a>
+                                        <a href="{{url('produk/'.$p->id,[])}}"><p>{{$p->deskripsi}}</p></a>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
                                             <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                             <a href="#"

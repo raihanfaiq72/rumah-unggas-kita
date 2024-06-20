@@ -23,6 +23,16 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function produkShow($id)
+    {
+        $data = ItemModel::where('id',$id)->first();
+        return view("$this->views"."/produkShow",[
+            'data'      => $data,
+            'prodTok'   => ItemModel::where('idToko',$data->idToko)->get(),
+            'random'    => ItemModel::orderBy('id','desc')->get()
+        ]);
+    }
+
     public function toko()
     {
         return view("$this->views"."/toko",[
