@@ -37,6 +37,8 @@ Route::middleware(['login'])->group(function () {
 
 
     Route::middleware(['seller'])->group(function () {
+        Route::get('cekot','Buyer\DashboardController@cekot');
+
         Route::resource('user/dashboard','Seller\DashboardController');
         Route::resource('user/toko','Seller\TokoController');
         Route::resource('user/profile','Seller\UsersController');

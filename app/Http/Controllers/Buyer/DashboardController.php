@@ -72,6 +72,11 @@ class DashboardController extends Controller
         return view("$this->views"."/hasilCari",compact('item','keyword'));
     }
 
+    public function cekot()
+    {
+        return view("$this->views"."/cekot");
+    }
+
     public function tentangkami()
     {
         return view("$this->views"."/kontak");
