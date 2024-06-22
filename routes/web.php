@@ -20,6 +20,7 @@ Route::get('toko','Buyer\DashboardController@toko');
 Route::get('toko/produk/{id}','Buyer\DashboardController@tokoShow');
 Route::get('tentang-kami','Buyer\DashboardController@tentangkami');
 Route::get('kategori/show/{id}','Buyer\DashboardController@kategoriShow');
+Route::get('hasil-pencarian','Buyer\DashboardController@search');
 
 Route::fallback(function () {
     return view('404.404');

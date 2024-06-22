@@ -185,11 +185,11 @@
             <div class="col-lg-4 col-xl-3">
                 <div class="row g-4 fruite">
                     <div class="col-lg-12">
-                        <div class="input-group w-100 mx-auto d-flex mb-4">
-                            <input type="search" class="form-control p-3" placeholder="keywords"
-                                aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                        </div>
+                        <form action="{{ url('hasil-pencarian') }}" method="GET" class="w-100">
+                            <input type="search" class="form-control p-3" placeholder="Search keywords"
+                                aria-label="Search keywords" aria-describedby="search-icon-1" name="keyword">
+                            <button type="submit" class="btn btn-primary">Cari <i class="fa fa-search"></i></button>
+                        </form>
                         <div class="mb-4">
                             <h4>Categories</h4>
                             <ul class="list-unstyled fruite-categorie">
@@ -226,11 +226,12 @@
                     </div>
                     <div class="col-lg-12">
                         <h4 class="mb-4">Featured products</h4>
-                        
+
                         @forelse($prodTok as $p)
                         <div class="d-flex align-items-center justify-content-start">
                             <div class="rounded" style="width: 100px; height: 100px;">
-                                <img src="{{url('')}}/admin/upload/{{$p->gambar}}" class="img-fluid rounded" alt="Image">
+                                <img src="{{url('')}}/admin/upload/{{$p->gambar}}" class="img-fluid rounded"
+                                    alt="Image">
                             </div>
                             <div>
                                 <h6 class="mb-2">{{$p->nama}}</h6>
@@ -257,7 +258,7 @@
                             </div>
                         </div>
                         @endforelse
-                        
+
                         <div class="d-flex justify-content-center my-4">
                             <a href="#"
                                 class="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100">Vew
@@ -279,30 +280,34 @@
         <div class="vesitable">
             <div class="owl-carousel vegetable-carousel justify-content-center">
 
-               @foreach($random as $p)
-               <div class="border border-primary rounded position-relative vesitable-item">
+                @foreach($random as $p)
+                <div class="border border-primary rounded position-relative vesitable-item">
                     <div class="vesitable-img">
                         @if($p->gambar)
-                            <img src="{{url('')}}/admin/upload/{{$p->gambar}}" class="img-fluid w-100 rounded-top" alt="">
+                        <img src="{{url('')}}/admin/upload/{{$p->gambar}}" class="img-fluid w-100 rounded-top" alt="">
                         @else
-                            <img src="{{url('')}}/img/Kalkun.png" class="img-fluid w-100 rounded-top" alt="">
+                        <img src="{{url('')}}/img/Kalkun.png" class="img-fluid w-100 rounded-top" alt="">
                         @endif
                     </div>
                     <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
                         style="top: 10px; right: 10px;">
                         @if($data->kategori == 1)
-                            Ayam
-                            @elseif($data->kategori == 2)
-                            Bebek
-                            @elseif($data->kategori == 3)
-                            Dara
-                            @else
-                            kalkun
+                        Ayam
+                        @elseif($data->kategori == 2)
+                        Bebek
+                        @elseif($data->kategori == 3)
+                        Dara
+                        @else
+                        kalkun
                         @endif
                     </div>
                     <div class="p-4 pb-0 rounded-bottom">
-                        <a href="{{url('produk/'.$p->id,[])}}"><h4>{{$p->nama}}</h4></a>
-                        <a href="{{url('produk/'.$p->id,[])}}"><p>{{$p->deskripsi}}</p></a>
+                        <a href="{{url('produk/'.$p->id,[])}}">
+                            <h4>{{$p->nama}}</h4>
+                        </a>
+                        <a href="{{url('produk/'.$p->id,[])}}">
+                            <p>{{$p->deskripsi}}</p>
+                        </a>
                         <div class="d-flex justify-content-between flex-lg-wrap">
                             <p class="text-dark fs-5 fw-bold">{{$p->harga}}</p>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
@@ -311,7 +316,7 @@
                     </div>
                 </div>
                 @endforeach
-                
+
             </div>
         </div>
     </div>

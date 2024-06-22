@@ -50,7 +50,7 @@ class DashboardController extends Controller
     public function tokoShow($id)
     {
         $toko = TokoModel::where('id',$id)->first();
-        $item = ItemModel::where('idToko',$toko->id)->get();
+        $item = ItemModel::where('idToko',$toko->id)->paginate(3);
         return view("$this->views"."/tokoShow",[
             'data'  => $item
         ]);
@@ -63,6 +63,13 @@ class DashboardController extends Controller
             'data'          => ItemModel::where('kategori',$id)->paginate(3),
             'kategoriLabel' => $Idkategori
         ]);
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        $item = ItemModel::where('nama','like','%'.$keyword.'%')->orWhere('deskripsi','like','%'.$keyword.'%')->paginate(3);
+        return view("$this->views"."/hasilCari",compact('item','keyword'));
     }
 
     public function tentangkami()
