@@ -11,6 +11,13 @@ use App\Models\ItemModel;
 class DashboardController extends Controller
 {
     private $views = 'Buyer/Dashboard';
+    protected $kategoriId = [
+        1 => 'Ayam',
+        2 => 'Bebek',
+        3 => 'Dara',
+        4 => 'Kalkun'
+    ];
+
     public function index()
     {
         return view("$this->views"."/index");
@@ -19,7 +26,7 @@ class DashboardController extends Controller
     public function produk()
     {
         return view("$this->views"."/produk",[
-            'data'  => ItemModel::get()
+            // 'data'  => ItemModel::get()
         ]);
     }
 
@@ -46,6 +53,15 @@ class DashboardController extends Controller
         $item = ItemModel::where('idToko',$toko->id)->get();
         return view("$this->views"."/tokoShow",[
             'data'  => $item
+        ]);
+    }
+
+    public function kategoriShow($id)
+    {
+        $Idkategori = $this->kategoriId[$id] ?? 'kategori tidak ditemukan';
+        return view("$this->views"."/kategoriShow",[
+            'data'          => ItemModel::where('kategori',$id)->get(),
+            'kategoriLabel' => $Idkategori
         ]);
     }
 

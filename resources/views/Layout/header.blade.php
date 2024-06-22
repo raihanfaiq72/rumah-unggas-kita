@@ -29,6 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ url('')}}/css/style.css" rel="stylesheet">
+    @livewireStyles
 </head>
 
 <body>

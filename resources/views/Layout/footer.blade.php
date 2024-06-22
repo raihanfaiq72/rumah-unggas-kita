@@ -116,9 +116,7 @@
 
     <!-- Template Javascript -->
     <script src="{{url('')}}/js/main.js"></script>
-    @env('local')
-        <script src="http://localhost:35729/livereload.js"></script>
-    @endenv
+    @livewireScripts
 </body>
 
 </html>
