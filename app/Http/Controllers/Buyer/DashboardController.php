@@ -60,7 +60,7 @@ class DashboardController extends Controller
     {
         $Idkategori = $this->kategoriId[$id] ?? 'kategori tidak ditemukan';
         return view("$this->views"."/kategoriShow",[
-            'data'          => ItemModel::where('kategori',$id)->get(),
+            'data'          => ItemModel::where('kategori',$id)->paginate(3),
             'kategoriLabel' => $Idkategori
         ]);
     }

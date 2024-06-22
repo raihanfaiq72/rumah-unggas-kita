@@ -67,18 +67,19 @@
             </div>
         </div> -->
         <div class="col-12">
-    <div class="pagination d-flex justify-content-center mt-5">
-        @if ($data->lastPage() > 1)
-            <a href="{{ $data->previousPageUrl() }}" class="rounded">&laquo;</a>
+            <div class="pagination d-flex justify-content-center mt-5">
+                @if ($data->lastPage() > 1)
+                <a href="{{ $data->previousPageUrl() }}" class="rounded">&laquo;</a>
 
-            @foreach ($data->getUrlRange(1, $data->lastPage()) as $page => $url)
-                <a href="{{ $url }}" class="rounded{{ ($page == $data->currentPage()) ? ' active' : '' }}">{{ $page }}</a>
-            @endforeach
+                @foreach ($data->getUrlRange(1, $data->lastPage()) as $page => $url)
+                <a href="{{ $url }}"
+                    class="rounded{{ ($page == $data->currentPage()) ? ' active' : '' }}">{{ $page }}</a>
+                @endforeach
 
-            <a href="{{ $data->nextPageUrl() }}" class="rounded">&raquo;</a>
-        @endif
-    </div>
-</div>
+                <a href="{{ $data->nextPageUrl() }}" class="rounded">&raquo;</a>
+                @endif
+            </div>
+        </div>
 
     </div>
 </div>

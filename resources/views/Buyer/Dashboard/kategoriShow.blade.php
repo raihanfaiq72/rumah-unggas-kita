@@ -147,18 +147,27 @@
 
                             <div class="col-12">
                                 <div class="pagination d-flex justify-content-center mt-5">
-                                    <a href="#" class="rounded">&laquo;</a>
-                                    <a href="#" class="active rounded">1</a>
-                                    <a href="#" class="rounded">2</a>
-                                    <a href="#" class="rounded">3</a>
-                                    <a href="#" class="rounded">4</a>
-                                    <a href="#" class="rounded">5</a>
-                                    <a href="#" class="rounded">6</a>
-                                    <a href="#" class="rounded">&raquo;</a>
+                                    @if ($data->previousPageUrl())
+                                    <a href="{{ $data->previousPageUrl() }}" class="rounded">&laquo;</a>
+                                    @else
+                                    <span class="rounded disabled">&laquo;</span>
+                                    @endif
+
+                                    @foreach ($data->getUrlRange(1, $data->lastPage()) as $page => $url)
+                                    <a href="{{ $url }}"
+                                        class="rounded{{ ($page == $data->currentPage()) ? ' active' : '' }}">{{ $page }}</a>
+                                    @endforeach
+
+                                    @if ($data->nextPageUrl())
+                                    <a href="{{ $data->nextPageUrl() }}" class="rounded">&raquo;</a>
+                                    @else
+                                    <span class="rounded disabled">&raquo;</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
