@@ -30,7 +30,7 @@
                     @forelse($data as $p)
                     <tr>
                         <th>{{$loop->iteration}}</th>
-                        <th>{{$p->idToko}}</th>
+                        <th>{{$p->toko->nama_toko}}</th>
                         <th scope="row">
                             @if($p->item->gambar)
                                 <div class="d-flex align-items-center">
@@ -91,8 +91,10 @@
                         <h5 class="mb-0 ps-4 me-4">Total</h5>
                         <p class="mb-0 pe-4">Rp {{$bTotal}}</p>
                     </div>
+                    <a href="{{url('cekot-staging')}}">
                     <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
-                        type="button">Proceed Checkout</button>
+                    type="button">Proses cekot</button>
+                    </a>
                 </div>
             </div>
         </div>

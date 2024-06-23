@@ -40,7 +40,8 @@ Route::middleware(['login'])->group(function () {
 
     Route::middleware(['seller'])->group(function () {
         Route::get('cekot','Buyer\DashboardController@cekotShow');
-
+        Route::get('cekot-staging','Buyer\DashboardController@cekotStaging');
+        Route::post('cekot-final','Buyer\DashboardController@cekotFinal');
         Route::resource('user/dashboard','Seller\DashboardController');
         Route::resource('user/toko','Seller\TokoController');
         Route::resource('user/profile','Seller\UsersController');

@@ -85,6 +85,49 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function cekotStaging()
+    {
+        $total  = TransaksiModel::where('idUser',session()->get('id'))->where('status',1)->sum('jumlah_bayar');
+        $ongkir = 10000;
+        $bTotal = $total+$ongkir;
+        return view("$this->views"."/cekotStaging",[
+            'data'      => TransaksiModel::where('idUser',session()->get('id'))->where('status',1)->get(),
+            'total'     => $total,
+            'bTotal'    => $bTotal,
+        ]);
+    }
+
+    public function cekotFinal(Request $request)
+    {
+        try {
+            $request->validate([
+                'idItem' => 'required',
+            ]);
+    
+            $userId = session()->get('id');
+            $itemId = $request->input('idItem');
+    
+            $item = ItemModel::find($itemId);
+            if (!$item) {
+                return redirect()->back()->with('gagal', 'Item not found.');
+            }
+    
+            $transaction = new TransaksiModel();
+            $transaction->idToko = $item->idToko; 
+            $transaction->idUser = $userId;
+            $transaction->idItem = $itemId;
+            $transaction->no_transaksi = 'RUK-Final' . time(); 
+            $transaction->jumlah = 1; 
+            $transaction->status = 2; 
+            $transaction->jumlah_bayar = $item->harga * $transaction->jumlah; 
+            $transaction->save();
+    
+            return redirect('cekot')->with('sukses', 'Berhasil menambahkan ke cart');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('gagal', 'Gagal menambahkan item ke cart. Silakan coba lagi nanti.');
+        }
+    }
+
     public function addToCart(Request $request)
     {
         try {
@@ -103,9 +146,9 @@ class DashboardController extends Controller
             $transaction->idToko        = $item['idToko']; 
             $transaction->idUser        = $userId;
             $transaction->idItem        = $itemId;
-            $transaction->no_transaksi  = 'TRX' . time(); 
+            $transaction->no_transaksi  = 'RUK' . time(); 
             $transaction->jumlah        = 1; 
-            $transaction->status        = 1; 
+            $transaction->status        = 1; // status 1 = barang di cart user
             $transaction->jumlah_bayar  = $item['harga']*$transaction->jumlah;
             $transaction->save();
 
