@@ -41,13 +41,6 @@
                             @endif
                         </p>
                         <h5 class="fw-bold mb-3">Rp {{$data->harga}}</h5>
-                        <!-- <div class="d-flex mb-4">
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star text-secondary"></i>
-                            <i class="fa fa-star"></i>
-                        </div> -->
                         <p class="mb-4">{{$data->deskripsi}}</p>
                         <div class="input-group quantity mb-5" style="width: 100px;">
                             <div class="input-group-btn">
@@ -62,9 +55,40 @@
                                 </button>
                             </div>
                         </div>
-                        <a href="#" class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i
-                                class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                        <form action="{{url('add-to-cart')}}">
+                            @csrf
+                            <input type="hidden" name="idItem" value="{{$data->id}}" id="">
+                            <button type="submit"
+                                class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary">
+                                <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                            </button>
+                        </form>
+                        <!-- Include Axios -->
+                        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+                        <script>
+                            function addToCart(itemId) {
+                                // Kirim permintaan POST ke endpoint /add-to-cart dengan menggunakan Axios
+                                axios.post('/add-to-cart', {
+                                        item_id: itemId
+                                    })
+                                    .then(function (response) {
+                                        console.log(response.data);
+                                        alert('Item added to cart successfully!');
+                                        // Tambahkan logika lain setelah berhasil menambahkan ke keranjang, misalnya update UI
+                                    })
+                                    .catch(function (error) {
+                                        console.error(error);
+                                        alert('Failed to add item to cart. Please try again later.');
+                                        // Tambahkan logika penanganan error lainnya sesuai kebutuhan
+                                    });
+                            }
+
+                        </script>
+
+
                     </div>
+
                     <div class="col-lg-12">
                         <nav>
                             <div class="nav nav-tabs mb-3">

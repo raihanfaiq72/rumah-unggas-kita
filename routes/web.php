@@ -21,6 +21,8 @@ Route::get('toko/produk/{id}','Buyer\DashboardController@tokoShow');
 Route::get('tentang-kami','Buyer\DashboardController@tentangkami');
 Route::get('kategori/show/{id}','Buyer\DashboardController@kategoriShow');
 Route::get('hasil-pencarian','Buyer\DashboardController@search');
+Route::post('/add-to-cart', 'CartController@addToCart')->name('addToCart');
+
 
 Route::fallback(function () {
     return view('404.404');

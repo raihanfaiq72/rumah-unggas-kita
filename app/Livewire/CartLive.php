@@ -9,6 +9,7 @@ use App\Models\TransaksiModel;
 class CartLive extends Component
 {
     public $cart;
+    public $data;
 
     protected $listeners = ['addToCart'];
 
