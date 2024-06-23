@@ -55,38 +55,14 @@
                                 </button>
                             </div>
                         </div>
-                        <form action="{{url('add-to-cart')}}">
+                        <form action="{{url('add-to-cart')}}" method="post">
                             @csrf
-                            <input type="hidden" name="idItem" value="{{$data->id}}" id="">
+                            <input type="hidden" name="idItem" value="{{$data->id}}" >
                             <button type="submit"
                                 class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary">
                                 <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                             </button>
                         </form>
-                        <!-- Include Axios -->
-                        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-                        <script>
-                            function addToCart(itemId) {
-                                // Kirim permintaan POST ke endpoint /add-to-cart dengan menggunakan Axios
-                                axios.post('/add-to-cart', {
-                                        item_id: itemId
-                                    })
-                                    .then(function (response) {
-                                        console.log(response.data);
-                                        alert('Item added to cart successfully!');
-                                        // Tambahkan logika lain setelah berhasil menambahkan ke keranjang, misalnya update UI
-                                    })
-                                    .catch(function (error) {
-                                        console.error(error);
-                                        alert('Failed to add item to cart. Please try again later.');
-                                        // Tambahkan logika penanganan error lainnya sesuai kebutuhan
-                                    });
-                            }
-
-                        </script>
-
-
                     </div>
 
                     <div class="col-lg-12">

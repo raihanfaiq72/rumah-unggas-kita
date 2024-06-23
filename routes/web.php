@@ -21,7 +21,7 @@ Route::get('toko/produk/{id}','Buyer\DashboardController@tokoShow');
 Route::get('tentang-kami','Buyer\DashboardController@tentangkami');
 Route::get('kategori/show/{id}','Buyer\DashboardController@kategoriShow');
 Route::get('hasil-pencarian','Buyer\DashboardController@search');
-Route::post('/add-to-cart', 'CartController@addToCart')->name('addToCart');
+Route::post('add-to-cart', 'Buyer\DashboardController@addToCart');
 
 
 Route::fallback(function () {
@@ -39,7 +39,7 @@ Route::middleware(['login'])->group(function () {
 
 
     Route::middleware(['seller'])->group(function () {
-        Route::get('cekot','Buyer\DashboardController@cekot');
+        Route::get('cekot','Buyer\DashboardController@cekotShow');
 
         Route::resource('user/dashboard','Seller\DashboardController');
         Route::resource('user/toko','Seller\TokoController');

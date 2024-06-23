@@ -11,4 +11,19 @@ class TransaksiModel extends Model
 
     protected $table = 'transaksi';
     protected $guarded = ['id'];
+
+    public function item()
+    {
+        return $this->belongsTo(ItemModel::class, 'idItem', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(UserModel::class, 'idUser', 'id');
+    }
+
+    public function toko()
+    {
+        return $this->belongsTo(TokoModel::class, 'idToko', 'id');
+    }
 }

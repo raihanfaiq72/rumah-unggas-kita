@@ -73,38 +73,47 @@ class DashboardController extends Controller
         return view("$this->views"."/hasilCari",compact('item','keyword'));
     }
 
-    public function cekot()
+    public function cekotShow()
     {
-        return view("$this->views"."/cekot");
-    }
-    public function addToCart(Request $request)
-{
-    try {
-        // Validasi request
-        $request->validate([
-            'item_id' => 'required|exists:items,id',
+        $total  = TransaksiModel::where('idUser',session()->get('id'))->where('status',1)->sum('jumlah_bayar');
+        $ongkir = 10000;
+        $bTotal = $total+$ongkir;
+        return view("$this->views"."/cekot",[
+            'data'      => TransaksiModel::where('idUser',session()->get('id'))->where('status',1)->get(),
+            'total'     => $total,
+            'bTotal'    => $bTotal,
         ]);
-
-        // Ambil data dari request
-        $userId = session()->get('id'); // Menggunakan user yang sedang login
-        $itemId = $request->input('item_id');
-
-        // Simpan ke database
-        $transaction = new TransaksiModel();
-        $transaction->idToko = 1; // Sesuaikan dengan idToko yang sesuai
-        $transaction->idUser = $userId;
-        $transaction->idItem = $itemId;
-        $transaction->no_transaksi = 'TRX' . time(); // Contoh: Menggunakan timestamp sebagai no_transaksi
-        $transaction->jumlah = 1; // Contoh: Jumlah bisa disesuaikan sesuai kebutuhan
-        $transaction->status = 1; // Status 1 untuk item yang sudah masuk ke keranjang
-        $transaction->jumlah_bayar = 0; // Contoh: Jumlah bayar, bisa dihitung berdasarkan item atau disesuaikan
-        $transaction->save();
-
-        return redirect()->back()->with('success', 'Item added to cart successfully.');
-    } catch (\Exception $e) {
-        return redirect()->back()->with('error', 'Failed to add item to cart. Please try again later.');
     }
-}
+
+    public function addToCart(Request $request)
+    {
+        try {
+            $request->validate([
+                'idItem' => 'required',
+            ]);
+
+            $userId = session()->get('id');
+            $itemId = $request->input('idItem');
+            $item = ItemModel::find($itemId);
+            if (!$item) {
+                return redirect()->back()->with('gagal', 'Item not found.');
+            }
+            // Simpan ke database
+            $transaction                = new TransaksiModel();
+            $transaction->idToko        = $item['idToko']; 
+            $transaction->idUser        = $userId;
+            $transaction->idItem        = $itemId;
+            $transaction->no_transaksi  = 'TRX' . time(); 
+            $transaction->jumlah        = 1; 
+            $transaction->status        = 1; 
+            $transaction->jumlah_bayar  = $item['harga']*$transaction->jumlah;
+            $transaction->save();
+
+            return redirect('cekot')->with('sukses', 'berhasil menambahkan ke cart');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('gagal', 'Failed to add item to cart. Please try again later.');
+        }
+    }
 
 
     public function tentangkami()
