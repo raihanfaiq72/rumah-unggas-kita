@@ -158,6 +158,19 @@ class DashboardController extends Controller
         }
     }
 
+    public function deleteItem($id)
+    {
+        try {
+            $transaction = TransaksiModel::findOrFail($id);
+        
+            $transaction->delete();
+        
+            return redirect()->back()->with('sukses', 'Item berhasil dihapus dari cart.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('gagal', 'Gagal menghapus item dari cart. Silakan coba lagi nanti.');
+        }
+    }
+
 
     public function tentangkami()
     {

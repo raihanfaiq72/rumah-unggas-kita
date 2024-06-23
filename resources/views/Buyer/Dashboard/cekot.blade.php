@@ -33,13 +33,15 @@
                         <th>{{$p->toko->nama_toko}}</th>
                         <th scope="row">
                             @if($p->item->gambar)
-                                <div class="d-flex align-items-center">
-                                    <img src="{{url('')}}/admin/upload/{{$p->item->gambar}}" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
-                                </div>
+                            <div class="d-flex align-items-center">
+                                <img src="{{url('')}}/admin/upload/{{$p->item->gambar}}"
+                                    class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
+                            </div>
                             @else
-                                <div class="d-flex align-items-center">
-                                    <img src="{{url('')}}/img/Kalkun.png" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
-                                </div>
+                            <div class="d-flex align-items-center">
+                                <img src="{{url('')}}/img/Kalkun.png" class="img-fluid me-5 rounded-circle"
+                                    style="width: 80px; height: 80px;" alt="">
+                            </div>
                             @endif
                         </th>
                         <td>
@@ -55,11 +57,21 @@
                             <p class="mb-0 mt-4">Rp {{$p->jumlah_bayar}}</p>
                         </td>
                         <td>
-                            <button class="btn btn-md rounded-circle bg-light border mt-4">
-                                <i class="fa fa-times text-danger"></i>
-                            </button>
+                            <form action="{{ url('delete-item/'.$p->id) }}" method="POST"
+                                onsubmit="return confirmDelete()">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-md rounded-circle bg-light border mt-4">
+                                    <i class="fa fa-times text-danger"></i>
+                                </button>
+                            </form>
                         </td>
+                        <script>
+                            function confirmDelete() {
+                                return confirm('Apakah Anda yakin ingin menghapus item ini dari cart?');
+                            }
 
+                        </script>
                     </tr>
                     @empty
                     <tr>
@@ -92,8 +104,9 @@
                         <p class="mb-0 pe-4">Rp {{$bTotal}}</p>
                     </div>
                     <a href="{{url('cekot-staging')}}">
-                    <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
-                    type="button">Proses cekot</button>
+                        <button
+                            class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
+                            type="button">Proses cekot</button>
                     </a>
                 </div>
             </div>
