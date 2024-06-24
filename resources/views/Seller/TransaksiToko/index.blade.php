@@ -89,14 +89,27 @@
                                         <td class="a-center ">
                                             <input type="checkbox" class="flat" name="table_records">
                                         </td>
-                                        <td class=" ">121000040</td>
-                                        <td class=" ">May 23, 2014 11:47:56 PM </td>
-                                        <td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-                                        <td class=" ">John Blank L</td>
-                                        <td class=" ">Paid</td>
-                                        <td class="a-right a-right ">$7.45</td>
-                                        <td class=" last"><a href="#">View</a>
+                                        <td class=" ">{{$loop->iteration}}</td>
+                                        <td class=" ">{{$p->no_transaksi}} </td>
+                                        <td class=" ">{{$p->user->nama}} <i class="success fa fa-long-arrow-up"></i></td>
+                                        <td class=" ">{{$p->item->nama}}</td>
+                                        <td class=" ">{{$p->jumlah}}</td>
+                                        <td class="a-right a-right ">{{$p->jumlah_bayar}}</td>
+                                        <td class="a-right a-right ">
+                                            @if($p->status == 1)
+                                                sedang di cart pelanggan
+                                            @elseif($p->status == 2)
+                                                sudah di cekot 
+                                            @elseif($p->status == 3)
+                                                sedang dikirim
+                                            @else
+                                                selesai
+                                            @endif
                                         </td>
+                                        <td class=" last"><a href="{{url('user/management-transaksi-toko/'.$p->id,[])}}">View</a>
+                                        <td class=" last"><a href="#">Edit</a>
+
+                                    </td>
                                     </tr>
                                     @empty
                                     <h1>Bjiir Kosong</h1>

@@ -13,6 +13,24 @@
 <div class="container-fluid py-5">
     <div class="container py-5">
         <h1 class="mb-4">Billing details</h1>
+        @if (session()->has('sukses'))
+        <div class="alert alert-success" role="alert">
+            {{ session('sukses') }}
+        </div>
+        @elseif (session()->has('gagal'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('gagal') }}
+        </div>
+        @elseif (count($errors) > 0)
+        <div class="alert alert-danger" role="alert">
+            <strong>Terjadi kesalahan:</strong>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <form action="{{ url('cekot-final') }}" method="POST">
             @csrf
             <div class="row g-5">
@@ -54,6 +72,7 @@
                             </thead>
                             <tbody>
                                 @foreach($data as $p)
+                                <input type="hidden" name="idItem" value="{{$p->id}}">
                                 <tr>
                                     <td class="py-5">{{ $loop->iteration }}</td>
                                     <td scope="row">
@@ -97,7 +116,8 @@
                     <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
                         <div class="col-12">
                             <div class="form-check text-start my-3">
-                                <label class="form-check-label" for="Paypal-1"><strong>Metode Pembayaran : </strong> PEMBAYARAN CASH</label>
+                                <label class="form-check-label" for="Paypal-1"><strong>Metode Pembayaran : </strong>
+                                    PEMBAYARAN CASH</label>
                             </div>
                         </div>
                     </div>
