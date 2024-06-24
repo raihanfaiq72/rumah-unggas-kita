@@ -17,7 +17,8 @@ class ManagementTransaksiTokoController extends Controller
     {
         $toko = TokoModel::where('idUsers',session()->get('id'))->first();
         return view("$this->views"."/index",[
-            'data'  => TransaksiModel::where('idToko',$toko->id)->get()
+            'data'  => TransaksiModel::where('idToko',$toko->id)->get(),
+            'title' => 'Transaksi'
         ]);
     }
 
