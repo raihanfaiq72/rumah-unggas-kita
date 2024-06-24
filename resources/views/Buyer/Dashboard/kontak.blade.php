@@ -9,19 +9,11 @@
 @endsection
 
 @section('main')
-@include('Layout/single-page-header')
+@include('Layout/single-page-header2')
 <div class="container-fluid contact py-5">
     <div class="container py-5">
         <div class="p-5 bg-light rounded">
             <div class="row g-4">
-                <div class="col-12">
-                    <div class="text-center mx-auto" style="max-width: 700px;">
-                        <h1 class="text-primary">Get in touch</h1>
-                        <p class="mb-4">The contact form is currently inactive. Get a functional and working contact
-                            form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and
-                            you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    </div>
-                </div>
                 <div class="col-lg-12">
                     <div class="h-100 rounded">
                         <iframe class="rounded w-100" style="height: 400px;"
@@ -45,7 +37,7 @@
                         <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
                         <div>
                             <h4>Address</h4>
-                            <p class="mb-2">123 Street New York.USA</p>
+                            <p class="mb-2">Pedurungan</p>
                         </div>
                     </div>
                     <div class="d-flex p-4 rounded mb-4 bg-white">

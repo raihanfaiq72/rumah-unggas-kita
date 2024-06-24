@@ -9,7 +9,7 @@
 @endsection
 
 @section('main')
-@include('Layout/single-page-header')
+@include('Layout/single-page-header1')
 <div class="container-fluid py-5">
     <div class="container py-5">
         <h1 class="mb-4">Billing details</h1>
