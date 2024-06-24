@@ -22,6 +22,14 @@ class ManagementTransaksiTokoController extends Controller
         ]);
     }
 
+    public function show($id)
+    {
+        return view("$this->views"."/show",[
+            'data'  => TransaksiModel::where('id',$id)->first(),
+            'title' => 'cekot brow'
+        ]);
+    }
+
     public function edit($id)
     {
         return view("$this->views"."/edit",[
