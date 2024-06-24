@@ -14,7 +14,7 @@
     <div class="container py-5">
         <div class="row g-5 align-items-center">
             <div class="col-md-12 col-lg-7">
-                <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
+                <h4 class="mb-3 text-secondary">Unggas Segar</h4>
                 <h1 class="mb-5 display-3 text-primary">Selamat Datang di Rumah Unggas Kita</h1>
                 <div class="position-relative mx-auto">
                     <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number"
@@ -409,7 +409,7 @@
                                             style="top: 10px; left: 10px;">Unggas</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Bebek</h4>
-                                            <p>Dengan daging ayam yang diolah oleh seorang profesional
+                                            <p>Dengan daging ayam yang dipotong oleh seorang profesional
                                                 yang bernama hanif ireng dapat mendapatkan cita rasa yang UMAMIIHHHH</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>

@@ -9,7 +9,7 @@
 @endsection
 
 @section('main')
-@include('Layout/single-page-header')
+@include('Layout/single-page-header1')
 <!-- resources/views/item/search-results.blade.php -->
 <div class="container">
     <h1>Hasil Pencarian untuk "{{ $keyword }}"</h1>
