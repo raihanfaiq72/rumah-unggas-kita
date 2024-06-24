@@ -107,7 +107,7 @@
                                             @endif
                                         </td>
                                         <td class=" last"><a href="{{url('user/management-transaksi-toko/'.$p->id,[])}}">View</a>
-                                        <td class=" last"><a href="#">Edit</a>
+                                        <td class=" last"><a href="{{url('user/management-transaksi-toko/'.$p->id,[])}}/edit">Edit</a>
 
                                     </td>
                                     </tr>

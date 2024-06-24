@@ -33,7 +33,23 @@ class ManagementTransaksiTokoController extends Controller
     public function edit($id)
     {
         return view("$this->views"."/edit",[
-            'data'  => TransaksiModel::where('id',$id)->first()
+            'data'  => TransaksiModel::where('id',$id)->first(),
+            'title' => 'cekot'
         ]);
+    }
+
+    public function update(Request $request)
+    {
+        TransaksiModel::where('id', $request->id)->update([
+            'idToko'    => $request->idToko,
+            'idUser'    => $request->idUser,
+            'idItem'    => $request->idItem,
+            'no_transaksi'  => $request->no_transaksi,
+            'jumlah'    => 1,
+            'status'    => $request->status,
+            'jumlah_bayar'  => $request->jumlah_bayar
+        ]);
+
+        return redirect("$this->url")->with('sukses','berhasil di update');
     }
 }

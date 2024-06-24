@@ -21,7 +21,10 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view("$this->views"."/index");
+        return view("$this->views"."/index",[
+            'data'  => ItemModel::get(),
+            
+        ]);
     }
 
     public function produk()

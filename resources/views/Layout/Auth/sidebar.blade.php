@@ -23,9 +23,6 @@ $toko = App\Models\TokoModel::where('idUsers',session()->get('id'))->first();
                     <li><a href="{{url('user/toko/'.$toko->id)}}/edit">Toko Anda</a></li>
                     <li><a href="{{url('user/item-toko')}}">Item Toko</a></li>
                     <li><a href="{{url('user/management-transaksi-toko')}}">Transaksi Toko</a></li>
-                    <li><a href="form_wizards.html">Form Wizard</a></li>
-                    <li><a href="form_upload.html">Form Upload</a></li>
-                    <li><a href="form_buttons.html">Form Buttons</a></li>
                 </ul>
             </li>
             @else
