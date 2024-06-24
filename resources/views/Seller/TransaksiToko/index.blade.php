@@ -91,7 +91,7 @@
                                         </td>
                                         <td class=" ">{{$loop->iteration}}</td>
                                         <td class=" ">{{$p->no_transaksi}} </td>
-                                        <td class=" ">{{$p->user->nama}} <i class="success fa fa-long-arrow-up"></i></td>
+                                        <td class=" ">{{$p->user->nama_lengkap}} <i class="success fa fa-long-arrow-up"></i></td>
                                         <td class=" ">{{$p->item->nama}}</td>
                                         <td class=" ">{{$p->jumlah}}</td>
                                         <td class="a-right a-right ">{{$p->jumlah_bayar}}</td>
