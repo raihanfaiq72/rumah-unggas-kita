@@ -37,7 +37,7 @@
                 
                 @php
                     use App\Models\TransaksiModel;
-                    $cartCount = TransaksiModel::where('idUser',session()->get('id'))->count();
+                    $cartCount = TransaksiModel::where('idUser',session()->get('id'))->where('status',1)->count();
                 @endphp
 
                 @guest

@@ -158,7 +158,7 @@ class DashboardController extends Controller
             $transaction->idUser        = $userId;
             $transaction->idItem        = $itemId;
             $transaction->no_transaksi  = 'RUK' . time(); 
-            $transaction->jumlah        = 1; 
+            $transaction->jumlah        = $item['jumlah']; 
             $transaction->status        = 1; // status 1 = barang di cart user
             $transaction->jumlah_bayar  = $item['harga']*$transaction->jumlah;
             $transaction->save();

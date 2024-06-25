@@ -40,6 +40,7 @@
                             kalkun
                             @endif
                         </p>
+                        <form action="{{url('add-to-cart')}}" method="post">
                         <h5 class="fw-bold mb-3">Rp {{$data->harga}}</h5>
                         <p class="mb-4">{{$data->deskripsi}}</p>
                         <div class="input-group quantity mb-5" style="width: 100px;">
@@ -48,14 +49,14 @@
                                     <i class="fa fa-minus"></i>
                                 </button>
                             </div>
-                            <input type="text" class="form-control form-control-sm text-center border-0" value="1">
+                            <input type="text" name="jumlah" class="form-control form-control-sm text-center border-0" value="1">
                             <div class="input-group-btn">
                                 <button class="btn btn-sm btn-plus rounded-circle bg-light border">
                                     <i class="fa fa-plus"></i>
                                 </button>
                             </div>
                         </div>
-                        <form action="{{url('add-to-cart')}}" method="post">
+                        
                             @csrf
                             <input type="hidden" name="idItem" value="{{$data->id}}" >
                             <button type="submit"

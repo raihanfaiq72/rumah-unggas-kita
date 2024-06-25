@@ -6,11 +6,13 @@
         <div class="col-md-6 col-lg-6 col-xl-4">
             <div class="rounded position-relative fruite-item">
                 <div class="fruite-img">
+                    <a href="">
                     @if($p->gambar)
                     <img src="admin/upload/{{$p->gambar}}" class="img-fluid w-100 rounded-top" alt="">
                     @else
                     <img src="{{url('')}}/img/Kalkun.png" class="img-fluid w-100 rounded-top" alt="">
                     @endif
+                    </a>
                 </div>
                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">
                     @if($p->kategori == 1)
@@ -31,8 +33,8 @@
                         <p>{{$p->deskripsi}}</p>
                     </a>
                     <div class="d-flex justify-content-between flex-lg-wrap">
-                        <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                        <p class="text-dark fs-5 fw-bold mb-0">Rp {{$p->harga}}</p>
+                        <a href="{{url('produk/'.$p->id,[])}}" class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                 class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                     </div>
                 </div>
@@ -53,19 +55,6 @@
         </div>
         @endforelse
 
-
-        <!-- <div class="col-12">
-            <div class="pagination d-flex justify-content-center mt-5">
-                <a href="#" class="rounded">&laquo;</a>
-                <a href="#" class="active rounded">1</a>
-                <a href="#" class="rounded">2</a>
-                <a href="#" class="rounded">3</a>
-                <a href="#" class="rounded">4</a>
-                <a href="#" class="rounded">5</a>
-                <a href="#" class="rounded">6</a>
-                <a href="#" class="rounded">&raquo;</a>
-            </div>
-        </div> -->
         <div class="col-12">
             <div class="pagination d-flex justify-content-center mt-5">
                 @if ($data->lastPage() > 1)
