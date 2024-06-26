@@ -13,7 +13,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Tables <small>Transaksi Pembeli Di Toko Anda</small></h3>
+                <h3>Transaksi</h3>
             </div>
 
             <div class="title_right">
@@ -37,7 +37,7 @@
             <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Table design <small>Custom design</small></h2>
+                        <h2>Transaksi Pembeli Di Toko Anda</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -56,8 +56,6 @@
                     </div>
 
                     <div class="x_content">
-
-                        <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
 
                         <div class="table-responsive">
                             <table class="table table-striped jambo_table bulk_action">
