@@ -47,8 +47,14 @@ class DashboardController extends Controller
 
     public function toko()
     {
+        if ($thistoko) {
+            $toko = TokoModel::where('idUsers', '!=', session()->get('id'))->get();
+        } else {
+            $toko = TokoModel::all();
+        }       
+        
         return view("$this->views"."/toko",[
-            'data'  => TokoModel::get()
+            'data'  => $toko
         ]);
     }
 
@@ -57,7 +63,8 @@ class DashboardController extends Controller
         $toko = TokoModel::where('id',$id)->first();
         $item = ItemModel::where('idToko',$toko->id)->paginate(3);
         return view("$this->views"."/tokoShow",[
-            'data'  => $item
+            'data'  => $item,
+            'toko'  => $toko
         ]);
     }
 

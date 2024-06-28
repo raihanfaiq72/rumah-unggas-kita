@@ -13,7 +13,7 @@
 <!-- Hero Start -->
 <div class="container-fluid fruite py-5">
     <div class="container py-5">
-        <h1 class="mb-4">Rumah Unggas Kita</h1>
+        <h1 class="mb-4">{{$toko->nama_toko}}</h1>
         <div class="row g-4">
             <div class="col-lg-12">
                 @include('Layout/kategoriSearch')

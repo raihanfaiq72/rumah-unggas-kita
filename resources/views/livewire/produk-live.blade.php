@@ -7,11 +7,11 @@
             <div class="rounded position-relative fruite-item">
                 <div class="fruite-img">
                     <a href="{{ url('produk/'.$p->id)}}">
-                    @if($p->gambar)
-                    <img src="admin/upload/{{$p->gambar}}" class="img-fluid w-100 rounded-top" alt="">
-                    @else
-                    <img src="{{url('')}}/img/Kalkun.png" class="img-fluid w-100 rounded-top" alt="">
-                    @endif
+                        @if($p->gambar)
+                        <img src="admin/upload/{{$p->gambar}}" class="img-fluid w-100 rounded-top" alt="">
+                        @else
+                        <img src="{{url('')}}/img/Kalkun.png" class="img-fluid w-100 rounded-top" alt="">
+                        @endif
                     </a>
                 </div>
                 <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">
@@ -32,9 +32,14 @@
                     <a href="{{url('produk/'.$p->id,[])}}">
                         <p>{{$p->deskripsi}}</p>
                     </a>
+
+                    <a href="{{url('toko/produk/'.$p->toko->id,[])}}">
+                        <p>Toko : {{$p->toko->nama_toko}}</p>
+                    </a>
                     <div class="d-flex justify-content-between flex-lg-wrap">
                         <p class="text-dark fs-5 fw-bold mb-0">Rp {{$p->harga}}</p>
-                        <a href="{{url('produk/'.$p->id,[])}}" class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                        <a href="{{url('produk/'.$p->id,[])}}"
+                            class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                 class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                     </div>
                 </div>
