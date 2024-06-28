@@ -69,7 +69,7 @@
                             <p class="mb-0 mt-4">Rp {{$p->item->harga}}</p>
                         </td>
                         <td>
-                            <p class="mb-0 mt-4">1</p>
+                            <p class="mb-0 mt-4">{{$p->jumlah}}</p>
                         </td>
                         <td>
                             <p class="mb-0 mt-4">Rp {{$p->jumlah_bayar}}</p>

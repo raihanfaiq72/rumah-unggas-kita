@@ -6,7 +6,7 @@
         <div class="col-md-6 col-lg-6 col-xl-4">
             <div class="rounded position-relative fruite-item">
                 <div class="fruite-img">
-                    <a href="">
+                    <a href="{{ url('produk/'.$p->id)}}">
                     @if($p->gambar)
                     <img src="admin/upload/{{$p->gambar}}" class="img-fluid w-100 rounded-top" alt="">
                     @else

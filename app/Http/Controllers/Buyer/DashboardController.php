@@ -23,6 +23,7 @@ class DashboardController extends Controller
     {
         return view("$this->views"."/index",[
             'data'  => ItemModel::get(),
+            'toko'  => TokoModel::get()
             
         ]);
     }
@@ -144,30 +145,33 @@ class DashboardController extends Controller
         try {
             $request->validate([
                 'idItem' => 'required',
+                'jumlah' => 'required|integer|min:1', // Validasi jumlah item
             ]);
-
+    
             $userId = session()->get('id');
             $itemId = $request->input('idItem');
+            $jumlah = $request->input('jumlah'); // Ambil jumlah dari input form
             $item = ItemModel::find($itemId);
             if (!$item) {
                 return redirect()->back()->with('gagal', 'Item not found.');
             }
             // Simpan ke database
             $transaction                = new TransaksiModel();
-            $transaction->idToko        = $item['idToko']; 
+            $transaction->idToko        = $item->idToko; 
             $transaction->idUser        = $userId;
             $transaction->idItem        = $itemId;
             $transaction->no_transaksi  = 'RUK' . time(); 
-            $transaction->jumlah        = $item['jumlah']; 
+            $transaction->jumlah        = $jumlah; // Menggunakan jumlah dari input form
             $transaction->status        = 1; // status 1 = barang di cart user
-            $transaction->jumlah_bayar  = $item['harga']*$transaction->jumlah;
+            $transaction->jumlah_bayar  = $item->harga * $jumlah;
             $transaction->save();
-
+    
             return redirect('cekot')->with('sukses', 'berhasil menambahkan ke cart');
         } catch (\Exception $e) {
             return redirect()->back()->with('gagal', 'Failed to add item to cart. Please try again later.');
         }
     }
+    
 
     public function deleteItem($id)
     {

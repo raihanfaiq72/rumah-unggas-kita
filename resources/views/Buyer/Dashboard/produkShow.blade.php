@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <h4 class="fw-bold mb-3">{{$data->nama}}</h4>
+                        <h4 class="fw-bold mb-3">{{ $data->nama }}</h4>
                         <p class="mb-3">Category:
                             @if($data->kategori == 1)
                             Ayam
@@ -37,34 +37,54 @@
                             @elseif($data->kategori == 3)
                             Dara
                             @else
-                            kalkun
+                            Kalkun
                             @endif
                         </p>
-                        <form action="{{url('add-to-cart')}}" method="post">
-                        <h5 class="fw-bold mb-3">Rp {{$data->harga}}</h5>
-                        <p class="mb-4">{{$data->deskripsi}}</p>
-                        <div class="input-group quantity mb-5" style="width: 100px;">
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-minus rounded-circle bg-light border">
-                                    <i class="fa fa-minus"></i>
-                                </button>
+                        <form action="{{ url('add-to-cart') }}" method="post">
+                            <h5 class="fw-bold mb-3">Rp {{ $data->harga }}</h5>
+                            <p class="mb-4">{{ $data->deskripsi }}</p>
+                            <div class="input-group quantity mb-5" style="width: 100px;">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-sm btn-minus rounded-circle bg-light border">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <input type="text" name="jumlah"
+                                    class="form-control form-control-sm text-center border-0" value="1">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-sm btn-plus rounded-circle bg-light border">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <input type="text" name="jumlah" class="form-control form-control-sm text-center border-0" value="1">
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
                             @csrf
-                            <input type="hidden" name="idItem" value="{{$data->id}}" >
+                            <input type="hidden" name="idItem" value="{{ $data->id }}">
                             <button type="submit"
                                 class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary">
                                 <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
                             </button>
                         </form>
                     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    var minusButton = document.querySelector('.btn-minus');
+    var plusButton = document.querySelector('.btn-plus');
+    var jumlahInput = document.querySelector('input[name="jumlah"]');
+
+    minusButton.addEventListener('click', function () {
+        var currentValue = parseInt(jumlahInput.value);
+        if (currentValue > 1) {
+            jumlahInput.value = currentValue - 1;
+        }
+    });
+
+    plusButton.addEventListener('click', function () {
+        var currentValue = parseInt(jumlahInput.value);
+        jumlahInput.value = currentValue + 1;
+    });
+});
+
+</script>
 
                     <div class="col-lg-12">
                         <nav>
