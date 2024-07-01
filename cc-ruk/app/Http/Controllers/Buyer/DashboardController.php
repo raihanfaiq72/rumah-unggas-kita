@@ -109,6 +109,24 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function cekotsblmStaging($id)
+    {
+        $total  = TransaksiModel::where('id',$id)->where('idUser',session()->get('id'))->where('status',1)->sum('jumlah_bayar');
+        $ongkir = 10000;
+        
+        if($total >0){
+            $bTotal = $total+$ongkir;
+        }else{
+            $bTotal = 0;
+        }
+        return view("$this->views"."/cekotsblmStaging",[
+            // dd(TransaksiModel::where('id',$id)->where('idUser',session()->get('id'))->where('status',1)->first())
+            'data'      => TransaksiModel::where('id',$id)->where('idUser',session()->get('id'))->where('status',1)->first(),
+            'total'     => $total,
+            'bTotal'    => $bTotal,
+        ]);
+    }
+
     public function cekotFinal(Request $request)
     {
         try {
@@ -152,15 +170,20 @@ class DashboardController extends Controller
         try {
             $request->validate([
                 'idItem' => 'required',
-                'jumlah' => 'required|integer|min:1', // Validasi jumlah item
+                'jumlah' => 'required|integer|min:1', 
             ]);
     
             $userId = session()->get('id');
             $itemId = $request->input('idItem');
-            $jumlah = $request->input('jumlah'); // Ambil jumlah dari input form
+            $jumlah = $request->input('jumlah'); 
+
             $item = ItemModel::find($itemId);
             if (!$item) {
                 return redirect()->back()->with('gagal', 'Item not found.');
+            }
+
+            if($item->stok < $jumlah){
+                return redirect()->back()->with('gagal','Stok tidak mencukupi');
             }
             // Simpan ke database
             $transaction                = new TransaksiModel();
@@ -168,10 +191,14 @@ class DashboardController extends Controller
             $transaction->idUser        = $userId;
             $transaction->idItem        = $itemId;
             $transaction->no_transaksi  = 'RUK' . time(); 
-            $transaction->jumlah        = $jumlah; // Menggunakan jumlah dari input form
-            $transaction->status        = 1; // status 1 = barang di cart user
+            $transaction->jumlah        = $jumlah; 
+            $transaction->status        = 1; 
             $transaction->jumlah_bayar  = $item->harga * $jumlah;
             $transaction->save();
+
+            // logika untuk mengurangi stok tersedia disini ya ges
+            $item->stok -=$jumlah;
+            $item->save();
     
             return redirect('cekot')->with('sukses', 'berhasil menambahkan ke cart');
         } catch (\Exception $e) {

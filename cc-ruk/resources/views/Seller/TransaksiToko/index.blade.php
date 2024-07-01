@@ -104,9 +104,12 @@
                                                 selesai
                                             @endif
                                         </td>
+                                        @if($p->status == 1)
+                                        <td class=" last"><a href="#">Aksi belum dapat digunakan</a>
+                                        @else
                                         <td class=" last"><a href="{{url('user/management-transaksi-toko/'.$p->id,[])}}">View</a>
                                         <td class=" last"><a href="{{url('user/management-transaksi-toko/'.$p->id,[])}}/edit">Edit</a>
-
+                                        @endif
                                     </td>
                                     </tr>
                                     @empty

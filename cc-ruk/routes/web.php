@@ -40,6 +40,7 @@ Route::middleware(['login'])->group(function () {
     Route::middleware(['seller'])->group(function () {
         Route::get('cekot','Buyer\DashboardController@cekotShow');
         Route::get('cekot-staging','Buyer\DashboardController@cekotStaging');
+        Route::get('cekot-sebelum-staging/{id}','Buyer\DashboardController@cekotsblmStaging');
         Route::post('cekot-final','Buyer\DashboardController@cekotFinal');
         Route::post('add-to-cart', 'Buyer\DashboardController@addToCart');
         Route::delete('delete-item/{id}', 'Buyer\DashboardController@deleteItem')->name('delete-item');

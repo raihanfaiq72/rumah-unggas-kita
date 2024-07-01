@@ -34,7 +34,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Nama Toko</th>
                         <th scope="col">Gambar</th>
                         <th scope="col">Nama</th>
@@ -45,14 +44,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($data as $p)
+                    @if($data)
                     <tr>
-                        <th>{{$loop->iteration}}</th>
-                        <th>{{$p->toko->nama_toko}}</th>
+                        <th>{{$data->toko->nama_toko}}</th>
                         <th scope="row">
-                            @if($p->item->gambar)
+                            @if($data->item->gambar)
                             <div class="d-flex align-items-center">
-                                <img src="{{url('')}}/admin/upload/{{$p->item->gambar}}"
+                                <img src="{{url('')}}/admin/upload/{{$data->item->gambar}}"
                                     class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
                             </div>
                             @else
@@ -63,23 +61,26 @@
                             @endif
                         </th>
                         <td>
-                            <p class="mb-0 mt-4">{{$p->item->nama}}</p>
+                            <p class="mb-0 mt-4">{{$data->item->nama}}</p>
                         </td>
                         <td>
-                            <p class="mb-0 mt-4">Rp {{$p->item->harga}}</p>
+                            <p class="mb-0 mt-4">Rp {{$data->item->harga}}</p>
                         </td>
                         <td>
-                            <p class="mb-0 mt-4">{{$p->jumlah}}</p>
+                            <p class="mb-0 mt-4">{{$data->jumlah}}</p>
                         </td>
                         <td>
-                            <p class="mb-0 mt-4">Rp {{$p->jumlah_bayar}}</p>
+                            <p class="mb-0 mt-4">Rp {{$data->jumlah_bayar}}</p>
                         </td>
                         <td>
-                            <a href="{{url('cekot-sebelum-staging/'.$p->id)}}">
-                                <button
-                                    class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
-                                    type="button">Cekot</button>
-                            </a>
+                            <form action="{{ url('delete-item/'.$data->id) }}" method="POST"
+                                onsubmit="return confirmDelete()">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-md rounded-circle bg-light border mt-4">
+                                    <i class="fa fa-times text-danger"></i>
+                                </button>
+                            </form>
                         </td>
                         <script>
                             function confirmDelete() {
@@ -88,15 +89,42 @@
 
                         </script>
                     </tr>
-                    @empty
-                    <tr>
-                        <h1>whoops kosong</h1>
-                    </tr>
-                    @endforelse
+                    @else
+                    <h1>Whoops kosong</h1>
+                    @endif
                 </tbody>
             </table>
         </div>
-
+        <div class="row g-4 justify-content-end">
+            <div class="col-8"></div>
+            <div class="col-sm-8 col-md-7 col-lg-6 col-xl-4">
+                <div class="bg-light rounded">
+                    <div class="p-4">
+                        <h1 class="display-6 mb-4">Total<span class="fw-normal"> Bayar</span></h1>
+                        <div class="d-flex justify-content-between mb-4">
+                            <h5 class="mb-0 me-4">Subtotal:</h5>
+                            <p class="mb-0">Rp {{$total}}</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-0 me-4">Shipping</h5>
+                            <div class="">
+                                <p class="mb-0">Flat rate: Rp 10.000</p>
+                            </div>
+                        </div>
+                        <p class="mb-0 text-end">Shipping to Rumah Anda</p>
+                    </div>
+                    <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
+                        <h5 class="mb-0 ps-4 me-4">Total</h5>
+                        <p class="mb-0 pe-4">Rp {{$bTotal}}</p>
+                    </div>
+                    <a href="{{url('cekot-staging')}}">
+                        <button
+                            class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
+                            type="button">Proses cekot</button>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @include('Layout/footer')
