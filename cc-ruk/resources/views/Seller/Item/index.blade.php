@@ -51,7 +51,8 @@
             <div class="col-md-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Tambah Item <small> <a href="{{url('user/item-toko/create')}}"><button>Tambah barang</button></a> </small></h2>
+                        <h2>Tambah Item <small> <a href="{{url('user/item-toko/create')}}"><button class="btn btn-success">Submit</button>
+                        </a> </small></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -99,8 +100,6 @@
                                 <h2>Bjir kosong ... !</h2>
                             </div>
                             @endif
-
-
                         </div>
                     </div>
                 </div>

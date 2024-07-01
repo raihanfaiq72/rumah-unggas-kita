@@ -15,7 +15,7 @@ $toko = App\Models\TokoModel::where('idUsers',session()->get('id'))->first();
                 <a href="{{url('user/profile/'.session()->get('id'))}}/edit"><i class="fa fa-home"></i> Profile</a>
             </li>
             <h3>Pesanan Anda</h3>
-            <li><a href="#"><i class="fa fa-edit"></i> Check Out </a>
+            <li><a href="{{url('user/cekot')}}"><i class="fa fa-edit"></i> Check Out </a>
                 @if($toko)
                 <h3>Toko Anda</h3>
             <li><a><i class="fa fa-edit"></i> {{$toko->nama_toko}} <span class="fa fa-chevron-down"></span></a>

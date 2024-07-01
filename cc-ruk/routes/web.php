@@ -44,11 +44,13 @@ Route::middleware(['login'])->group(function () {
         Route::post('cekot-final','Buyer\DashboardController@cekotFinal');
         Route::post('add-to-cart', 'Buyer\DashboardController@addToCart');
         Route::delete('delete-item/{id}', 'Buyer\DashboardController@deleteItem')->name('delete-item');
+
         Route::resource('user/dashboard','Seller\DashboardController');
         Route::resource('user/toko','Seller\TokoController');
         Route::resource('user/profile','Seller\UsersController');
         Route::resource('user/item-toko','Seller\ItemTokoController');
         Route::resource('user/management-transaksi-toko','Seller\ManagementTransaksiTokoController');
+        Route::resource('user/cekot','Seller\CekotController');
     });
 
 });
