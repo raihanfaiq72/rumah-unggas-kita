@@ -127,13 +127,17 @@
                                             </form>
                                         </td>
                                         @elseif($p->status == 2)
-                                        <td class=" last"><a
-                                                href="{{url('user/management-transaksi-toko/cetak-resi/'.$p->id,[])}}">Cetak
+                                        <td class=" last"><a href="{{url('invoice/'.$p->id,[])}}">Cetak
                                                 Resi</a>
-                                        <td class=" last"><a
-                                                href="{{url('user/management-transaksi-toko/'.$p->id,[])}}/edit">pratinjau</a>
-                                            @endif
+                                            @elseif($p->status == 3)
+                                        <td class=" last"><a href="{{url('invoice/'.$p->id,[])}}">Cetak
+                                                Resi</a>
+                                            @else
+                                        <td class=" last"><a href="{{url('invoice/'.$p->id,[])}}">Cetak
+                                                Resi</a>
+                                        <td class=" last"><a href="#">Pesanan Selesai</a>
                                         </td>
+                                        @endif
                                     </tr>
                                     @empty
                                     <h1>Bjiir Kosong</h1>

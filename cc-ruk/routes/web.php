@@ -21,6 +21,7 @@ Route::get('toko/produk/{id}','Buyer\DashboardController@tokoShow');
 Route::get('tentang-kami','Buyer\DashboardController@tentangkami');
 Route::get('kategori/show/{id}','Buyer\DashboardController@kategoriShow');
 Route::get('hasil-pencarian','Buyer\DashboardController@search');
+Route::get('invoice/{id}','Buyer\DashboardController@invoice');
 
 
 Route::fallback(function () {
@@ -33,6 +34,8 @@ Route::post('loginProses','Auth\AuthController@loginProses');
 Route::get('register','Auth\AuthController@register');
 Route::post('registerProses','Auth\AuthController@registerProses');
 Route::get('logout','Auth\AuthController@logout');
+
+Route::get('pdf-tes','PDFController@index');
 
 Route::middleware(['login'])->group(function () {
 

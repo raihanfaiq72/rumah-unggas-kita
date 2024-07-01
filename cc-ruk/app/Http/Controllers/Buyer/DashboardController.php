@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Buyer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use PDF;
 
 use App\Models\TokoModel;
 use App\Models\ItemModel;
@@ -222,6 +223,16 @@ class DashboardController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->with('gagal', 'Gagal menghapus item dari cart. Silakan coba lagi nanti.');
         }
+    }
+
+    public function invoice($id)
+    {
+        $file = TransaksiModel::where('id',$id)->first();
+        $invoice = PDF::loadview('pdf.universalInvoice',[
+            'data'  => TransaksiModel::where('id',$id)->first(),
+            'title' => 'Cetak Invoice'
+        ]);
+        return $invoice->download($file->no_transaksi.'.pdf');
     }
 
 
