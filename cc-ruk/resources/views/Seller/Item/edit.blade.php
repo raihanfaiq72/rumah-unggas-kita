@@ -81,7 +81,7 @@
                                     <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input type="text" id="first-name" required="required" class="form-control "
+                                    <input type="text" id="first-name"  class="form-control "
                                         name="nama" value="{{$data->nama}}">
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                                     <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <input type="text" id="last-name" name="deskripsi" required="required"
+                                    <input type="text" id="last-name" name="deskripsi" 
                                         class="form-control" value="{{$data->deskripsi}}">
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                                 <label for="middle-name"
                                     class="col-form-label col-md-3 col-sm-3 label-align">Kategori</label>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <select name="kategori" id="">
+                                    <select name="kategori">
                                         <option value="1">Ayam</option>
                                         <option value="2">Bebek</option>
                                         <option value="3">Dara</option>
@@ -135,8 +135,7 @@
                                 <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Upload
                                     Gambar</label>
                                 <div class="col-md-6 col-sm-6">
-                                    <input id="middle-name" class="form-control" type="file" name="photo"
-                                        accept="image/*" onchange="previewImage(event)">
+                                    <input id="middle-name" class="form-control" type="file" name="photo" onchange="previewImage(event)">
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -153,7 +152,7 @@
                                     Gambar Sebelumnya</label>
                                 <div class="col-md-6 col-sm-6">
                                     <img id="image-preview" src="{{ url('') }}/admin/upload/{{$data->gambar}}" alt="Preview Gambar"
-                                        style="display: none; width: 100%; max-width: 300px;" />
+                                        style=" width: 100%; max-width: 300px;" />
                                 </div>
                             </div>
 

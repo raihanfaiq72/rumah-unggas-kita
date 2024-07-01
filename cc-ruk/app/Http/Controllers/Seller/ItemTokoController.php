@@ -48,7 +48,7 @@ class ItemTokoController extends Controller
             'deskripsi' => 'required',
             'stok'      => 'required',
             'kategori'  => 'required',
-            'photo'     => 'required|file|mimes:jpeg,png,jpg,gif,webp'
+            'photo'     => 'required|mimes:jpeg,png,jpg,gif,webp'
         ]);
 
         $toko = TokoModel::where('idUsers', session()->get('id'))->first();
@@ -89,7 +89,7 @@ class ItemTokoController extends Controller
             // 'harga'     => 'required',
             // 'deskripsi' => 'required',
             // 'stok'      => 'required',
-            // 'photo'     => 'required|file|mimes:jpeg,png,jpg,gif,webp'
+            'photo'     => 'required|mimes:jpeg,png,jpg,gif,webp'
         ]);
 
         $toko = TokoModel::where('idUsers', session()->get('id'))->first();
@@ -100,6 +100,8 @@ class ItemTokoController extends Controller
             $file       = $request->file('photo');
             $fileName   = Str::uuid() . "-" . time() . "." . $file->extension();
             $file->move("admin/upload/", $fileName);
+
+            // dd($fileName);
 
             ItemModel::where('id', $request->id)->update([
                 'idToko'    => $tunjuk,
@@ -114,6 +116,7 @@ class ItemTokoController extends Controller
 
             return redirect("user/item-toko")->with('sukses', 'Data berhasil di edit dengan gambar');
         } else {
+            // dd($fileName);
             ItemModel::where('id', $request->id)->update([
                 'idToko'    => $tunjuk,
                 'nama'      => $request->nama,
