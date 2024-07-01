@@ -53,80 +53,98 @@
                     </div>
                     <br><br>
                     <div class="form-item">
-                        <textarea name="order_notes" class="form-control" spellcheck="false" cols="30" rows="11"
+                        <textarea name="note" class="form-control" spellcheck="false" cols="30" rows="11"
                             placeholder="Order Notes (Optional)"></textarea>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-6 col-xl-5">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Produk</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">Harga</th>
-                                    <th scope="col">Jumlah</th>
-                                    <th scope="col">Bayar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($data as $p)
-                                <input type="hidden" name="idItem" value="{{$p->id}}">
-                                <tr>
-                                    <td class="py-5">{{ $loop->iteration }}</td>
-                                    <td scope="row">
-                                        @if($p->item->gambar)
-                                        <div class="d-flex align-items-center mt-2">
-                                            <img src="{{ url('') }}/admin/upload/{{ $p->item->gambar }}"
-                                                class="img-fluid rounded-circle" style="width: 90px; height: 90px;"
-                                                alt="">
-                                        </div>
-                                        @else
-                                        <div class="d-flex align-items-center mt-2">
-                                            <img src="{{ url('') }}/img/Kalkun.png" class="img-fluid rounded-circle"
-                                                style="width: 90px; height: 90px;" alt="">
-                                        </div>
-                                        @endif
-                                    </td>
-                                    <td class="py-5">{{ $p->item->nama }}</td>
-                                    <td class="py-5">Rp {{ $p->jumlah_bayar }}</td>
-                                    <td class="py-5">1</td>
-                                    <td class="py-5">Rp {{ $p->jumlah_bayar }}</td>
-                                </tr>
-                                @endforeach
+                <form action="{{url('cekot-final')}}" method="POST">
+                    @csrf 
+                    @method('POST')
+                    <input type="hidden" name="id" value="{{$data->id}}">
+                    <input type="hidden" name="idUser" value="{{$data->idUser}}">
+                    <input type="hidden" name="idToko" value="{{$data->idToko}}">
+                    <input type="hidden" name="idItem" value="{{$data->idItem}}">
+                    <input type="hidden" name="no_transaksi" value="{{$data->no_transaksi}}">
+                    <input type="hidden" name="jumlah" value="{{$data->jumlah}}">
+                    <input type="hidden" name="jumlah_bayar" value="{{$data->jumlah_bayar}}">
+                    <div class="col-md-12 col-lg-6 col-xl-5">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Produk</th>
+                                        <th scope="col">Nama</th>
+                                        <th scope="col">Harga</th>
+                                        <th scope="col">Jumlah</th>
+                                        <th scope="col">Bayar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row">
+                                            @if($data->item->gambar)
+                                            <div class="d-flex align-items-center mt-2">
+                                                <img src="{{ url('') }}/admin/upload/{{ $data->item->gambar }}"
+                                                    class="img-fluid rounded-circle" style="width: 90px; height: 90px;"
+                                                    alt="">
+                                            </div>
+                                            @else
+                                            <div class="d-flex align-items-center mt-2">
+                                                <img src="#" class="img-fluid rounded-circle"
+                                                    style="width: 90px; height: 90px;" alt="Gambar Kosong">
+                                            </div>
+                                            @endif
+                                        </td>
+                                        <td class="py-5">{{ $data->item->nama }}</td>
+                                        <td class="py-5">Rp {{ $data->jumlah_bayar }}</td>
+                                        <td class="py-5">1</td>
+                                        <td class="py-5">Rp {{ $data->jumlah_bayar }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td class="py-5">
+                                            <p class="mb-0 text-dark text-uppercase py-3">Ongkir</p>
+                                        </td>
+                                        <td class="py-5"></td>
+                                        <td class="py-5"></td>
+                                        <td class="py-5">
+                                            <div class="py-3 border-bottom border-top">
+                                                <p class="mb-0 text-dark">Rp 10000</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td class="py-5">
+                                            <p class="mb-0 text-dark text-uppercase py-3">TOTAL</p>
+                                        </td>
+                                        <td class="py-5"></td>
+                                        <td class="py-5"></td>
+                                        <td class="py-5">
+                                            <div class="py-3 border-bottom border-top">
+                                                <p class="mb-0 text-dark">Rp {{ $bTotal }}</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                                <tr>
-                                    <th scope="row"></th>
-                                    <td class="py-5">
-                                        <p class="mb-0 text-dark text-uppercase py-3">TOTAL</p>
-                                    </td>
-                                    <td class="py-5"></td>
-                                    <td class="py-5"></td>
-                                    <td class="py-5">
-                                        <div class="py-3 border-bottom border-top">
-                                            <p class="mb-0 text-dark">Rp {{ $bTotal }}</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
-                        <div class="col-12">
-                            <div class="form-check text-start my-3">
-                                <label class="form-check-label" for="Paypal-1"><strong>Metode Pembayaran : </strong>
-                                    PEMBAYARAN CASH</label>
+                        <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
+                            <div class="col-12">
+                                <div class="form-check text-start my-3">
+                                    <label class="form-check-label" for="Paypal-1"><strong>Metode Pembayaran : </strong>
+                                        PEMBAYARAN CASH</label>
+                                </div>
                             </div>
                         </div>
+                        <div class="row g-4 text-center align-items-center justify-content-center pt-4">
+                            <button type="submit"
+                                class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Buat
+                                Pesanan</button>
+                        </div>
                     </div>
-                    <div class="row g-4 text-center align-items-center justify-content-center pt-4">
-                        <button type="submit"
-                            class="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Buat
-                            Pesanan</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </form>
 

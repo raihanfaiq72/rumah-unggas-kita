@@ -103,7 +103,7 @@ class DashboardController extends Controller
         $ongkir = 10000;
         $bTotal = $total+$ongkir;
         return view("$this->views"."/cekotStaging",[
-            'data'      => TransaksiModel::where('idUser',session()->get('id'))->where('status',1)->get(),
+            'data'      => TransaksiModel::where('id',$id)->where('idUser',session()->get('id'))->where('status',1)->first(),
             'total'     => $total,
             'bTotal'    => $bTotal,
         ]);
@@ -131,36 +131,32 @@ class DashboardController extends Controller
     {
         try {
             $request->validate([
-                'idItem' => 'required',
+                'id'            => 'required',
+                'idUser'        => 'required',
+                'idToko'        => 'required',
+                'idItem'        => 'required',
+                'note'          => 'required',
+                'no_transaksi'  => 'required',
+                'jumlah'        => 'required|integer|min:1',
+                'jumlah_bayar'  => 'required|numeric|min:0',
+            ],[
+                'note.required' => 'note harus diisi'
             ]);
     
-            $userId = session()->get('id');
-            $itemId = $request->input('idItem');
+            TransaksiModel::where('id', $request->id)->update([
+                'idUser'        => $request->idUser,
+                'idToko'        => $request->idToko,
+                'idItem'        => $request->idItem,
+                'note'          => $request->note,
+                'no_transaksi'  => $request->no_transaksi,
+                'jumlah'        => $request->jumlah,
+                'jumlah_bayar'  => $request->jumlah_bayar,
+                'status'        => 2 
+            ]);
     
-            // Temukan item berdasarkan $itemId
-            $item = ItemModel::find($itemId);
-            if (!$item) {
-                return redirect()->back()->with('gagal', 'Item tidak ditemukan.');
-            }
-    
-            // Simpan transaksi
-            $transaction = new TransaksiModel();
-            $transaction->idToko = $item->idToko;
-            $transaction->idUser = $userId;
-            $transaction->idItem = $itemId;
-            $transaction->no_transaksi = 'RUK-Final' . time();
-            $transaction->jumlah = 1;
-            $transaction->status = 2; // Mengubah status menjadi 2
-            $transaction->jumlah_bayar = $item->harga * $transaction->jumlah;
-            $transaction->save();
-    
-            // Update status item menjadi 2 di tabel item
-            $item->status = 2;
-            $item->save();
-    
-            return redirect('cekot')->with('sukses', 'Berhasil menambahkan ke cart');
+            return redirect('cekot')->with('sukses', 'Anda berhasil cekot.');
         } catch (\Exception $e) {
-            return redirect()->back()->with('gagal', 'Gagal menambahkan item ke cart. Silakan coba lagi nanti.');
+            return redirect()->back()->with('gagal', 'Gagal cekot. Silakan coba lagi nanti.');
         }
     }
     

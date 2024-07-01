@@ -68,9 +68,11 @@
                                         <th class="column-title">No Invoice </th>
                                         <th class="column-title">Pembeli </th>
                                         <th class="column-title">Barang </th>
+                                        <th class="column-title">Note </th>
                                         <th class="column-title">Jumlah </th>
                                         <th class="column-title">Jumlah Bayar </th>
                                         <th class="column-title">Status </th>
+                                        <th class="column-title"></th>
                                         <th class="column-title no-link last"><span class="nobr">Detail</span>
                                         </th>
                                         <th class="bulk-actions" colspan="7">
@@ -91,6 +93,7 @@
                                         <td class=" ">{{$p->no_transaksi}} </td>
                                         <td class=" ">{{$p->user->nama_lengkap}} <i class="success fa fa-long-arrow-up"></i></td>
                                         <td class=" ">{{$p->item->nama}}</td>
+                                        <td class=" ">{{$p->note}}</td>
                                         <td class=" ">{{$p->jumlah}}</td>
                                         <td class="a-right a-right ">{{$p->jumlah_bayar}}</td>
                                         <td class="a-right a-right ">
@@ -108,7 +111,7 @@
                                         <td class=" last"><a href="#">Aksi belum dapat digunakan</a>
                                         @else
                                         <td class=" last"><a href="{{url('user/management-transaksi-toko/'.$p->id,[])}}">View</a>
-                                        <td class=" last"><a href="{{url('user/management-transaksi-toko/'.$p->id,[])}}/edit">Edit</a>
+                                        <td class=" last"><a href="{{url('user/management-transaksi-toko/'.$p->id,[])}}/edit">Ubah Status</a>
                                         @endif
                                     </td>
                                     </tr>

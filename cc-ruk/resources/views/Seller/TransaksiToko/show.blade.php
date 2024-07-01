@@ -67,7 +67,7 @@
 
                             <p>{{$data->item->deskripsi}}</p>
                             <br />
-
+                            <p>NOTE : {{$data->note}}</p>
                             
                             <div class="">
                                 <div class="product_price">
@@ -79,12 +79,9 @@
                                     <span class="price-tax">bayar : {{$data->jumlah_bayar}}</span>
                                     <br>
                                 </div>
+                                <a href="{{url('user/management-transaksi-toko')}}"><button class="btn btn-primary">Kembali</button></a>
                             </div>
-
                         </div>
-
-
-                        
                     </div>
                 </div>
             </div>
