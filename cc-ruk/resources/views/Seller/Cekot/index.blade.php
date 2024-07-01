@@ -67,16 +67,24 @@
                                         <th class="column-title"># </th>
                                         <th class="column-title">No Invoice </th>
                                         <th class="column-title">Pembeli </th>
+                                        <th class="column-title">Toko </th>
                                         <th class="column-title">Barang </th>
                                         <th class="column-title">Jumlah </th>
                                         <th class="column-title">Jumlah Bayar </th>
                                         <th class="column-title">Status </th>
-                                        <th class="column-title no-link last"><span class="nobr">Detail</span>
+                                        <th class="column-title">Detail </th>
+                                        <th class="column-title no-link last"><span class="nobr">#</span>
                                         </th>
                                         <th class="bulk-actions" colspan="7">
                                             <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span
                                                     class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
                                         </th>
+                                        <script>
+                                            function confirmDelete() {
+                                                return confirm('Apakah Anda yakin ingin menghapus item ini dari cart?');
+                                            }
+
+                                        </script>
                                     </tr>
                                 </thead>
 
@@ -89,33 +97,48 @@
                                         </td>
                                         <td class=" ">{{$loop->iteration}}</td>
                                         <td class=" ">{{$p->no_transaksi}} </td>
-                                        <td class=" ">{{$p->user->nama_lengkap}} <i class="success fa fa-long-arrow-up"></i></td>
+                                        <td class=" ">{{$p->user->nama_lengkap}} <i
+                                                class="success fa fa-long-arrow-up"></i></td>
+                                        <td class=" ">{{$p->toko->nama_toko}} <i
+                                                class="success fa fa-long-arrow-up"></i></td>
                                         <td class=" ">{{$p->item->nama}}</td>
                                         <td class=" ">{{$p->jumlah}}</td>
                                         <td class="a-right a-right ">{{$p->jumlah_bayar}}</td>
                                         <td class="a-right a-right ">
                                             @if($p->status == 1)
-                                                sedang di cart
+                                            sedang di cart
                                             @elseif($p->status == 2)
-                                                sudah di cekot 
+                                            sudah di cekot menunggu konformasi penjual
                                             @elseif($p->status == 3)
-                                                sedang dikirim
+                                            pembayaran diterima barang sedang dikirim
                                             @else
-                                                selesai
+                                            selesai
                                             @endif
                                         </td>
                                         @if($p->status == 1)
-                                        <td class=" last"><a href="#">Batalkan Pesanan</a>
-                                        @else
-                                        <td class=" last"><a href="{{url('user/management-transaksi-toko/'.$p->id,[])}}">View</a>
-                                        <td class=" last"><a href="{{url('user/management-transaksi-toko/'.$p->id,[])}}/edit">Edit</a>
-                                        @endif
-                                    </td>
+                                        <td class="last">
+                                            <form action="{{url('delete-item/'.$p->id)}}" method="POST"
+                                                onsubmit="return confirmDelete()">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">
+                                                    Batalkan Pesanan
+                                                </button>
+                                            </form>
+                                        </td>
+                                        @elseif($p->status == 2)
+                                        <td class=" last"><a
+                                                href="{{url('user/management-transaksi-toko/cetak-resi/'.$p->id,[])}}">Cetak
+                                                Resi</a>
+                                        <td class=" last"><a
+                                                href="{{url('user/management-transaksi-toko/'.$p->id,[])}}/edit">pratinjau</a>
+                                            @endif
+                                        </td>
                                     </tr>
                                     @empty
                                     <h1>Bjiir Kosong</h1>
                                     @endforelse
-                                    
+
                                 </tbody>
                             </table>
                         </div>

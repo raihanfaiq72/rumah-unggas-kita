@@ -96,10 +96,10 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function cekotStaging()
+    public function cekotStaging($id)
     {
 
-        $total  = TransaksiModel::where('idUser',session()->get('id'))->where('status',1)->sum('jumlah_bayar');
+        $total  = TransaksiModel::where('id',$id)->where('idUser',session()->get('id'))->where('status',1)->sum('jumlah_bayar');
         $ongkir = 10000;
         $bTotal = $total+$ongkir;
         return view("$this->views"."/cekotStaging",[
@@ -211,9 +211,17 @@ class DashboardController extends Controller
     {
         try {
             $transaction = TransaksiModel::findOrFail($id);
-        
+            $jumlah = $transaction->jumlah;
             $transaction->delete();
-        
+
+
+            $item = ItemModel::find($transaction->idItem);
+            if (!$item) {
+                return redirect()->back()->with('gagal', 'Item tidak ditemukan.');
+            }
+            $item->stok += $jumlah;
+            $item->save();
+
             return redirect()->back()->with('sukses', 'Item berhasil dihapus dari cart.');
         } catch (\Exception $e) {
             return redirect()->back()->with('gagal', 'Gagal menghapus item dari cart. Silakan coba lagi nanti.');
