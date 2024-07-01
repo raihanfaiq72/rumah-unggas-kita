@@ -75,6 +75,8 @@
                                         <th class="column-title">Detail </th>
                                         <th class="column-title no-link last"><span class="nobr">#</span>
                                         </th>
+                                        <th class="column-title no-link last"><span class="nobr">#</span>
+                                        </th>
                                         <th class="bulk-actions" colspan="7">
                                             <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span
                                                     class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
@@ -135,7 +137,9 @@
                                             @else
                                         <td class=" last"><a href="{{url('invoice/'.$p->id,[])}}">Cetak
                                                 Resi</a>
-                                        <td class=" last"><a href="#">Pesanan Selesai</a>
+                                        <td class=" last"><a href="#">Pesanan Selesai </a>
+                                        </td>
+                                        <td class=" last"><a href="{{url('review/'.$p->id,[])}}">Review </a>
                                         </td>
                                         @endif
                                     </tr>

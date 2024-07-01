@@ -65,26 +65,26 @@
                             </button>
                         </form>
                     </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    var minusButton = document.querySelector('.btn-minus');
-    var plusButton = document.querySelector('.btn-plus');
-    var jumlahInput = document.querySelector('input[name="jumlah"]');
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var minusButton = document.querySelector('.btn-minus');
+                            var plusButton = document.querySelector('.btn-plus');
+                            var jumlahInput = document.querySelector('input[name="jumlah"]');
 
-    minusButton.addEventListener('click', function () {
-        var currentValue = parseInt(jumlahInput.value);
-        if (currentValue > 1) {
-            jumlahInput.value = currentValue - 1;
-        }
-    });
+                            minusButton.addEventListener('click', function () {
+                                var currentValue = parseInt(jumlahInput.value);
+                                if (currentValue > 1) {
+                                    jumlahInput.value = currentValue - 1;
+                                }
+                            });
 
-    plusButton.addEventListener('click', function () {
-        var currentValue = parseInt(jumlahInput.value);
-        jumlahInput.value = currentValue + 1;
-    });
-});
+                            plusButton.addEventListener('click', function () {
+                                var currentValue = parseInt(jumlahInput.value);
+                                jumlahInput.value = currentValue + 1;
+                            });
+                        });
 
-</script>
+                    </script>
 
                     <div class="col-lg-12">
                         <nav>

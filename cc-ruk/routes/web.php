@@ -22,6 +22,8 @@ Route::get('tentang-kami','Buyer\DashboardController@tentangkami');
 Route::get('kategori/show/{id}','Buyer\DashboardController@kategoriShow');
 Route::get('hasil-pencarian','Buyer\DashboardController@search');
 Route::get('invoice/{id}','Buyer\DashboardController@invoice');
+Route::get('review/{id}','Buyer\DashboardController@reviewCreate');
+Route::post('review-barang','Buyer\DashboardController@reviewStore');
 
 
 Route::fallback(function () {

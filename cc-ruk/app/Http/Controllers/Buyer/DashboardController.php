@@ -9,6 +9,7 @@ use PDF;
 use App\Models\TokoModel;
 use App\Models\ItemModel;
 use App\Models\TransaksiModel;
+use App\Models\ReviewModel;
 
 class DashboardController extends Controller
 {
@@ -233,6 +234,31 @@ class DashboardController extends Controller
             'title' => 'Cetak Invoice'
         ]);
         return $invoice->download($file->no_transaksi.'.pdf');
+    }
+
+    public function reviewCreate($id)
+    {
+        $data = TransaksiModel::where('id',$id)->first();
+
+        return view("Seller/Review/"."/index",[
+            'data'  => $data,
+            'title' => 'Review'
+        ]);
+    }
+
+    public function reviewStore(Request $request)
+    {
+        $request->validate([
+            'isi'           => 'required',
+            'idTransaksi'   => 'required'
+        ]);
+
+        ReviewModel::create([
+            'isi'           => $request->isi,
+            'idTransaksi'   => $request->idTransaksi
+        ]);
+
+        return redirect()->back()->with('sukses','terimakasih sudah memberikan review');
     }
 
 
