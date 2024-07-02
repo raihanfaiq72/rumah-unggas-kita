@@ -30,11 +30,19 @@
                         <div class="carousel-item active rounded">
                             <img src="img/hero-img-1.png" class="img-fluid w-100 h-100 bg-secondary rounded"
                                 alt="First slide">
-                            <a href="#" class="btn px-4 py-2 text-white rounded">Ayam</a>
+                            <a href="{{url('kategori/show/1')}}" class="btn px-4 py-2 text-white rounded">Ayam</a>
                         </div>
                         <div class="carousel-item rounded">
                             <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                            <a href="#" class="btn px-4 py-2 text-white rounded">Bebek</a>
+                            <a href="{{url('kategori/show/2')}}" class="btn px-4 py-2 text-white rounded">Bebek</a>
+                        </div>
+                        <div class="carousel-item rounded">
+                            <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                            <a href="{{url('kategori/show/3')}}" class="btn px-4 py-2 text-white rounded">Dara</a>
+                        </div>
+                        <div class="carousel-item rounded">
+                            <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                            <a href="{{url('kategori/show/4')}}" class="btn px-4 py-2 text-white rounded">Kalkun</a>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
@@ -176,7 +184,7 @@
                                             <p>{{$p->deskripsi}}</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">{{$p->harga}}</p>
-                                                <a href="#"
+                                                <a href="{{url('produk/'.$p->id,[])}}"
                                                     class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to
                                                     cart</a>
@@ -217,7 +225,7 @@
                                             <p>{{$p->deskripsi}}</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">{{$p->harga}}</p>
-                                                <a href="#"
+                                                <a href="{{url('produk/'.$p->id,[])}}"
                                                     class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to
                                                     cart</a>
@@ -258,7 +266,7 @@
                                             <p>{{$p->deskripsi}}</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">{{$p->harga}}</p>
-                                                <a href="#"
+                                                <a href="{{url('produk/'.$p->id,[])}}"
                                                     class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to
                                                     cart</a>
@@ -311,7 +319,7 @@
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="rounded position-relative fruite-item">
                                         <div class="fruite-img">
-                                            <img src="#"
+                                            <img src="{{url('produk/'.$p->id,[])}}"
                                                 class="img-fluid w-100 rounded-top" alt="">
                                         </div>
                                         <h2>kosong</h2>
@@ -350,7 +358,7 @@
                                             <p>{{$p->deskripsi}}</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">{{$p->harga}}</p>
-                                                <a href="#"
+                                                <a href="{{url('produk/'.$p->id,[])}}"
                                                     class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to
                                                     cart</a>
@@ -424,24 +432,11 @@
                 <div class="py-4">
                     <h1 class="display-3 text-white">Unggas Segar</h1>
                     <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
-                    <p class="mb-4 text-dark">The generated Lorem Ipsum is therefore always free from repetition
-                        injected humour, or non-characteristic words etc.</p>
-                    <a href="#" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
+                    <p class="mb-4 text-dark">Platform ini terpercaya sejak mendapatkan tugas dr pak egia</p>
+                    <a href="{{url('register')}}" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">DAFTARKAN AKUN NOW!</a>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="position-relative">
-                    <img src="img/baner-1.png" class="img-fluid w-100 rounded" alt="">
-                    <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute"
-                        style="width: 140px; height: 140px; top: 0; left: 0;">
-                        <h1 style="font-size: 100px;">1</h1>
-                        <div class="d-flex flex-column">
-                            <span class="h2 mb-0">50$</span>
-                            <span class="h4 text-muted mb-0">kg</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
