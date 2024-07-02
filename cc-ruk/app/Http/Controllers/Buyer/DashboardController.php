@@ -39,11 +39,21 @@ class DashboardController extends Controller
 
     public function produkShow($id)
     {
-        $data = ItemModel::where('id',$id)->first();
+        $data       = ItemModel::where('id',$id)->first();
+        if(!$data){
+            return redirect()->back()->with('gagal','produk tidak ditemukan');
+        }
+
+        $transaksi  = TransaksiModel::where('idItem',$data->id)->first();
+        $review = []; 
+        if ($transaksi) {
+            $review = ReviewModel::where('idTransaksi', $transaksi->id)->get();
+        }
         return view("$this->views"."/produkShow",[
             'data'      => $data,
             'prodTok'   => ItemModel::where('idToko',$data->idToko)->get(),
-            'random'    => ItemModel::orderBy('id','desc')->get()
+            'random'    => ItemModel::orderBy('id','desc')->get(),
+            'review'    => $review
         ]);
     }
 
@@ -239,10 +249,12 @@ class DashboardController extends Controller
     public function reviewCreate($id)
     {
         $data = TransaksiModel::where('id',$id)->first();
+        $review = ReviewModel::where('idTransaksi',$data->id)->first();
 
         return view("Seller/Review/"."/index",[
             'data'  => $data,
-            'title' => 'Review'
+            'title' => 'Review',
+            'review'    => $review
         ]);
     }
 
@@ -253,12 +265,12 @@ class DashboardController extends Controller
             'idTransaksi'   => 'required'
         ]);
 
-        ReviewModel::create([
+        ReviewModel::where('id',$request->id)->update([
             'isi'           => $request->isi,
             'idTransaksi'   => $request->idTransaksi
         ]);
 
-        return redirect()->back()->with('sukses','terimakasih sudah memberikan review');
+        return redirect('user/cekot')->with('sukses','terimakasih sudah memberikan review');
     }
 
 

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ReviewModel extends Model
 {
     use HasFactory;
-    protected $table = 'toko';
+    protected $table = 'review';
     protected $guarded = ['id'];
 
     public function transaksi()

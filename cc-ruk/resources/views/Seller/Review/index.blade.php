@@ -56,6 +56,19 @@
                     <div class="ln_solid"></div>
                     <form action="{{url('review-barang')}}" method="POST">
                         @csrf
+                        <input type="hidden" value="{{$review->id}}" name="id">
+                        @if($review)
+                        <input type="hidden" name="idTransaksi" value="{{$data->id}}">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 ">Review</label>
+                            <div class="col-md-9 col-sm-9 ">
+                                <textarea class="resizable_textarea form-control"
+                                    placeholder="Masukan review anda disini" name="isi">{{$review->isi}}</textarea>
+                                <br>
+                                <button class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                        @else
                         <input type="hidden" name="idTransaksi" value="{{$data->id}}">
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 ">Review</label>
@@ -66,6 +79,7 @@
                                 <button class="btn btn-primary">Submit</button>
                             </div>
                         </div>
+                        @endif
                     </form>
                 </div>
             </div>
