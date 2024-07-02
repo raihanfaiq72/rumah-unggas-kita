@@ -82,7 +82,7 @@
                                         <div class="mask">
                                             <p>Your Text</p>
                                             <div class="tools tools-bottom">
-                                                <a href="#"><i class="fa fa-link"></i></a>
+                                                <a href="{{url('user/item-toko/'.$p->id)}}"><i class="fa fa-link"></i></a>
                                                 <a href="{{url('user/item-toko/'.$p->id,[])}}/edit"><i class="fa fa-pencil"></i></a>
                                                 <a href="#"><i class="fa fa-times"></i></a>
                                             </div>

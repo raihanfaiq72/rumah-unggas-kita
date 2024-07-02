@@ -130,4 +130,13 @@ class ItemTokoController extends Controller
             return redirect("user/item-toko")->with('sukses', 'Data berhasil di edit');
         }
     }
+
+    public function show($id)
+    {
+        $data = ItemModel::where('id',$id)->first();
+        return view("$this->views"."/show",[
+            'data'  => $data,
+            'title' => 'Show'
+        ]);
+    }
 }

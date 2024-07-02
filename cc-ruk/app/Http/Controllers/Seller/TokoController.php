@@ -10,7 +10,12 @@ class TokoController extends Controller
 {
     private $views  = 'Seller/Toko';
     private $url    = 'user/toko';
-    // private $session = session()->get('idUsers');
+    private $session ;
+
+    public function __construct()
+    {
+        $this->session = session()->get('id');
+    }
 
     public function create()
     {

@@ -41,12 +41,12 @@ class ManagementTransaksiTokoController extends Controller
     public function update(Request $request)
     {
         TransaksiModel::where('id', $request->id)->update([
-            'idToko'    => $request->idToko,
-            'idUser'    => $request->idUser,
-            'idItem'    => $request->idItem,
+            'idToko'        => $request->idToko,
+            'idUser'        => $request->idUser,
+            'idItem'        => $request->idItem,
             'no_transaksi'  => $request->no_transaksi,
-            'jumlah'    => 1,
-            'status'    => $request->status,
+            'jumlah'        => 1,
+            'status'        => $request->status,
             'jumlah_bayar'  => $request->jumlah_bayar
         ]);
 
