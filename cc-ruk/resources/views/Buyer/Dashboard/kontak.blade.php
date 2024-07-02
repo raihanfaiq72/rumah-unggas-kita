@@ -17,7 +17,7 @@
                 <div class="col-lg-12">
                     <div class="h-100 rounded">
                         <iframe class="rounded w-100" style="height: 400px;"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7422600483094!2d110.41840871477633!3d-7.004548994940627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708c3e80000001%3A0x6571b8c787d470c7!2sUniversitas%20Dian%20Nuswantoro!5e0!3m2!1sen!2sid!4v1688108570984!5m2!1sen!2sid"
                             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
